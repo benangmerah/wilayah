@@ -1,0 +1,155 @@
+@prefix : <http://sw.benangmerah.net/ontology/idn-adm-div/#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://sw.benangmerah.net/ontology/idn-adm-div/> .
+
+<http://sw.benangmerah.net/ontology/idn-adm-div/> rdf:type owl:Ontology ;
+                                                  
+                                                  rdfs:label "BenangMerah Indonesian Administrative Divisions Ontology" .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://sw.benangmerah.net/ontology/idn-adm-div/hasChild
+
+<http://sw.benangmerah.net/ontology/idn-adm-div/hasChild> rdf:type owl:ObjectProperty ;
+                                                          
+                                                          owl:inverseOf <http://sw.benangmerah.net/ontology/idn-adm-div/hasParent> ;
+                                                          
+                                                          rdfs:subPropertyOf <http://sw.benangmerah.net/ontology/idn-adm-div/inside> .
+
+
+
+###  http://sw.benangmerah.net/ontology/idn-adm-div/hasParent
+
+<http://sw.benangmerah.net/ontology/idn-adm-div/hasParent> rdf:type owl:ObjectProperty ;
+                                                           
+                                                           rdfs:subPropertyOf <http://sw.benangmerah.net/ontology/idn-adm-div/inside> .
+
+
+
+###  http://sw.benangmerah.net/ontology/idn-adm-div/inside
+
+<http://sw.benangmerah.net/ontology/idn-adm-div/inside> rdf:type owl:ObjectProperty ,
+                                                                 owl:TransitiveProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://sw.benangmerah.net/ontology/idn-adm-div/AdministrativeDivision
+
+<http://sw.benangmerah.net/ontology/idn-adm-div/AdministrativeDivision> rdf:type owl:Class .
+
+
+
+###  http://sw.benangmerah.net/ontology/idn-adm-div/Desa
+
+<http://sw.benangmerah.net/ontology/idn-adm-div/Desa> rdf:type owl:Class ;
+                                                      
+                                                      rdfs:label "Desa"@id ;
+                                                      
+                                                      rdfs:subClassOf <http://sw.benangmerah.net/ontology/idn-adm-div/FourthOrderAdministrativeDivision> ,
+                                                                      <http://sw.benangmerah.net/ontology/idn-adm-div/IndonesianAdministrativeDivision> .
+
+
+
+###  http://sw.benangmerah.net/ontology/idn-adm-div/FirstOrderAdministrativeDivision
+
+<http://sw.benangmerah.net/ontology/idn-adm-div/FirstOrderAdministrativeDivision> rdf:type owl:Class ;
+                                                                                  
+                                                                                  rdfs:subClassOf <http://sw.benangmerah.net/ontology/idn-adm-div/AdministrativeDivision> .
+
+
+
+###  http://sw.benangmerah.net/ontology/idn-adm-div/FourthOrderAdministrativeDivision
+
+<http://sw.benangmerah.net/ontology/idn-adm-div/FourthOrderAdministrativeDivision> rdf:type owl:Class ;
+                                                                                   
+                                                                                   rdfs:subClassOf <http://sw.benangmerah.net/ontology/idn-adm-div/AdministrativeDivision> .
+
+
+
+###  http://sw.benangmerah.net/ontology/idn-adm-div/IndonesianAdministrativeDivision
+
+<http://sw.benangmerah.net/ontology/idn-adm-div/IndonesianAdministrativeDivision> rdf:type owl:Class ;
+                                                                                  
+                                                                                  rdfs:subClassOf <http://sw.benangmerah.net/ontology/idn-adm-div/AdministrativeDivision> .
+
+
+
+###  http://sw.benangmerah.net/ontology/idn-adm-div/Kabupaten
+
+<http://sw.benangmerah.net/ontology/idn-adm-div/Kabupaten> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:label "Regency"@en ,
+                                                                      "Kabupaten"@id ;
+                                                           
+                                                           rdfs:subClassOf <http://sw.benangmerah.net/ontology/idn-adm-div/IndonesianAdministrativeDivision> ,
+                                                                           <http://sw.benangmerah.net/ontology/idn-adm-div/SecondOrderAdministrativeDivision> .
+
+
+
+###  http://sw.benangmerah.net/ontology/idn-adm-div/Kecamatan
+
+<http://sw.benangmerah.net/ontology/idn-adm-div/Kecamatan> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:label "Kecamatan"@id ;
+                                                           
+                                                           rdfs:subClassOf <http://sw.benangmerah.net/ontology/idn-adm-div/IndonesianAdministrativeDivision> ,
+                                                                           <http://sw.benangmerah.net/ontology/idn-adm-div/ThirdOrderAdministrativeDivision> .
+
+
+
+###  http://sw.benangmerah.net/ontology/idn-adm-div/Provinsi
+
+<http://sw.benangmerah.net/ontology/idn-adm-div/Provinsi> rdf:type owl:Class ;
+                                                          
+                                                          rdfs:label "Province"@en ,
+                                                                     "Provinsi"@id ;
+                                                          
+                                                          rdfs:subClassOf <http://sw.benangmerah.net/ontology/idn-adm-div/FirstOrderAdministrativeDivision> ,
+                                                                          <http://sw.benangmerah.net/ontology/idn-adm-div/IndonesianAdministrativeDivision> .
+
+
+
+###  http://sw.benangmerah.net/ontology/idn-adm-div/PseudoAdministrativeDivision
+
+<http://sw.benangmerah.net/ontology/idn-adm-div/PseudoAdministrativeDivision> rdf:type owl:Class .
+
+
+
+###  http://sw.benangmerah.net/ontology/idn-adm-div/SecondOrderAdministrativeDivision
+
+<http://sw.benangmerah.net/ontology/idn-adm-div/SecondOrderAdministrativeDivision> rdf:type owl:Class ;
+                                                                                   
+                                                                                   rdfs:subClassOf <http://sw.benangmerah.net/ontology/idn-adm-div/AdministrativeDivision> .
+
+
+
+###  http://sw.benangmerah.net/ontology/idn-adm-div/ThirdOrderAdministrativeDivision
+
+<http://sw.benangmerah.net/ontology/idn-adm-div/ThirdOrderAdministrativeDivision> rdf:type owl:Class ;
+                                                                                  
+                                                                                  rdfs:subClassOf <http://sw.benangmerah.net/ontology/idn-adm-div/AdministrativeDivision> .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+
