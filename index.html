@@ -41,7 +41,7 @@
 <h4>
 <a name="knowledge-base" class="anchor" href="#knowledge-base"><span class="octicon octicon-link"></span></a>Knowledge base</h4>
 
-<p>The OWL knowledge base is derived from a CSV extracted using <a href="http://tabula.nerdpower.org/">Tabula</a> from the PDF of <a href="http://www.kemendagri.go.id/pages/data-wilayah">Buku Induk Kode dan Wilayah Administrasi Pemerintahan Per Provinsi, Kabupaten/Kota dan Kecamatan Seluruh Indonesia</a>, which was legalised as <strong>Lampiran I Permendagri No. 18/2013</strong>, with several mistruncated words corrected based on information on the document itself, as well as abbreviations expanded.</p>
+<p>The OWL knowledge base is generated using a custom node.js script from a CSV extracted using <a href="http://tabula.nerdpower.org/">Tabula</a> from the PDF of <a href="http://www.kemendagri.go.id/pages/data-wilayah">Buku Induk Kode dan Wilayah Administrasi Pemerintahan Per Provinsi, Kabupaten/Kota dan Kecamatan Seluruh Indonesia</a>, which was legalised as <em>Lampiran I Permendagri No. 18/2013</em>, with several mistruncated words corrected based on information on the document itself, as well as abbreviations expanded.</p>
 
 <p>Note that the Permendagri does not include recent establishments of new divisions, such as the province of Kalimantan Utara and many kabupatens around Indonesia. Nonetheless, this knowledgebase uses the Permendagri as its basis. Other possible sources, such as <a href="http://kodepos.nomor.net/">http://kodepos.nomor.net/</a>, will be incorporated in the future.</p>
 
@@ -66,7 +66,9 @@
 <code>kabupaten-kota</code> is the <code>slugified-name</code> of the kabupaten/kota, <em>including</em> the word <code>kabupaten</code> or <code>kota</code>. The abbreviation Kab. in the Permendagri is expanded. Note that the subdivisions of DKI Jakarta are officially termed "Kota Administratif" and "Kabupaten Administratif".</li>
 <li>
 <code>kecamatan</code> is the <code>slugified-name</code> of the kecamatan/distrik, <em>not including</em> the word <code>kecamatan</code> nor <code>distrik</code>.</li>
-</ul><p>Each resource is <code>rdfs:label</code>-ed by its name according to the Permendagri.</p>
+</ul><p>At the moment, the <code>slugified-name</code> form of place names are generated using <a href="https://github.com/epeli/underscore.string">underscore.string</a>.</p>
+
+<p>Each resource is <code>rdfs:label</code>-ed by its name according to the Permendagri.</p>
 
 <p>The OWL ontology (schema, if you may) is available in Turtle format <a href="https://raw.githubusercontent.com/benangmerah/idn-adm-div-ont/master/instances.ttl">from the repository</a>.</p>
 
