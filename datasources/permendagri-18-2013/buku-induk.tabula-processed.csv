@@ -3051,44 +3051,46 @@ XII,32,JAWA BARAT
 32.78.05, 5 Kawalu
 "", 6
 32.78.06,Cibeureum
-Mangkubumi 8
-Bungursari 9
-Purbaratu 10
-32.79,KOTA BANJAR 26
-32.79.01 32.79.02 32.79.03 32.79.04,Banjar 1
-"",Pataruman 2
-"",Purwaharja 3
-"",Langen Sari 4
-33,JAWA TENGAH
-33.01,KAB. CILACAP 1
-33.01.01 33.01.02 33.01.03 33.01.04 33.01.05 33.01.06 33.01.07 33.01.08 33.01.09 33.01.10 33.01.11 33.01.12 33.01.13 33.01.14 33.01.15 33.01.16 33.01.17 33.01.18 33.01.19 33.01.20 33.01.21 33.01.22 33.01.23 33.01.24,Kedungreja 1
-"",Kesugihan 2
-"",Adipala 3
-"",Binangun 4
-"",Nusawungu 5
-"",Kroya 6
-"",Maos 7
-"",Jeruklegi 8
-"",Kawunganten 9
-"",Gandrungmangu 10
-"",Sidareja 11
-"",Karangpucung 12
-"",Cimanggu 13
-"",Majenang 14
-"",Wanareja 15
-"",Dayeuhluhur 16
-"",Sampang 17
-"",Cipari 18
-"",Patimuan 19
-"",Bantarsari 20
-"",Cilacap Selatan 21
-"",Cilacap Tengah 22
-"",Cilacap Utara 23
-"",Kampung Laut 24
-33.02,KAB. BANYUMAS 2
-Lumbir 1
-Wangon 2
-Jatilawang 3
+"",32.78.07, 7 Tamansari
+"",32.78.08, 8 Mangkubumi
+"",32.78.09, 9 Bungursari
+"",32.78.10, 10 Purbaratu
+"",32.79, 26 KOTA BANJAR
+"",32.79.01, 1 Banjar
+"",32.79.02, 2 Pataruman
+"",32.79.03, 3 Purwaharja
+"",32.79.04, 4 Langen Sari
+XIII,33,JAWA TENGAH
+"",33.01, 1 KAB. CILACAP
+"",33.01.01, 1 Kedungreja
+"",33.01.02, 2 Kesugihan
+"",33.01.03, 3 Adipala
+"",33.01.04, 4 Binangun
+"",33.01.05, 5 Nusawungu
+"",33.01.06, 6 Kroya
+"",33.01.07, 7 Maos
+"",33.01.08, 8 Jeruklegi
+"",33.01.09, 9 Kawunganten
+"",33.01.10, 10 Gandrungmangu
+"",33.01.11, 11 Sidareja
+"",33.01.12, 12 Karangpucung
+"",33.01.13, 13 Cimanggu
+"",33.01.14, 14 Majenang
+"",33.01.15, 15 Wanareja
+"",33.01.16, 16 Dayeuhluhur
+"",33.01.17, 17 Sampang
+"",33.01.18, 18 Cipari
+"",33.01.19, 19 Patimuan
+"",33.01.20, 20 Bantarsari
+"",33.01.21, 21 Cilacap Selatan
+"",33.01.22, 22 Cilacap Tengah
+"",33.01.23, 23 Cilacap Utara
+"",33.01.24, 24 Kampung Laut
+"",33.02, 2 KAB. BANYUMAS
+"",33.02.01, 1 Lumbir
+"",33.02.02, 2 Wangon
+"","", 3
+"",33.02.03,Jatilawang
 33.02.04, 4 Rawalo
 33.02.05, 5 Kebasen
 33.02.06, 6 Kemranjen
@@ -3661,43 +3663,45 @@ Jatilawang 3
 33.74.03, 3 Semarang Timur
 "", 4
 33.74.04,Gayam Sari
-Pedurungan 6
-Semarang Selatan 7
-Candisari 8
-Gajah Mungkur 9
-Tembalang 10
-Banyumanik 11
-Gunungpati 12
-Semarang Barat 13
-Mijen 14
-Ngaliyan 15
-Tugu 16
-33.75,KOTA PEKALONGAN 34
-33.75.01 33.75.02 33.75.03 33.75.04,Pekalongan Barat 1
-"",Pekalongan Timur 2
-"",Pekalongan Utara 3
-"",Pekalongan Selatan 4
-33.76,KOTA TEGAL 35
-33.76.01 33.76.02 33.76.03 33.76.04,Tegal Barat 1
-"",Tegal Timur 2
-"",Tegal Selatan 3
-"",Margadana 4
-34,DAISTA YOGYAKARTA
-34.01,KAB. KULON PROGO 1
-34.01.01 34.01.02 34.01.03 34.01.04 34.01.05 34.01.06 34.01.07 34.01.08 34.01.09 34.01.10 34.01.11 34.01.12,Temon 1
-"",Wates 2
-"",Panjatan 3
-"",Galur 4
-"",Lendah 5
-"",Sentolo 6
-"",Pengasih 7
-"",Kokap 8
-"",Girimulyo 9
-"",Nanggulan 10
-"",Samigaluh 11
-"",Kalibawang 12
-34.02,KAB. BANTUL 2
-Srandakan 1
+"",33.74.05, 5 Genuk
+"",33.74.06, 6 Pedurungan
+"",33.74.07, 7 Semarang Selatan
+"",33.74.08, 8 Candisari
+"",33.74.09, 9 Gajah Mungkur
+"",33.74.10, 10 Tembalang
+"",33.74.11, 11 Banyumanik
+"",33.74.12, 12 Gunungpati
+"",33.74.13, 13 Semarang Barat
+"",33.74.14, 14 Mijen
+"",33.74.15, 15 Ngaliyan
+"",33.74.16, 16 Tugu
+"",33.75, 34 KOTA PEKALONGAN
+"",33.75.01, 1 Pekalongan Barat
+"",33.75.02, 2 Pekalongan Timur
+"",33.75.03, 3 Pekalongan Utara
+"",33.75.04, 4 Pekalongan Selatan
+"",33.76, 35 KOTA TEGAL
+"",33.76.01, 1 Tegal Barat
+"",33.76.02, 2 Tegal Timur
+"",33.76.03, 3 Tegal Selatan
+"",33.76.04, 4 Margadana
+XIV,34,DAISTA YOGYAKARTA
+"",34.01, 1 KAB. KULON PROGO
+"",34.01.01, 1 Temon
+"",34.01.02, 2 Wates
+"",34.01.03, 3 Panjatan
+"",34.01.04, 4 Galur
+"",34.01.05, 5 Lendah
+"",34.01.06, 6 Sentolo
+"",34.01.07, 7 Pengasih
+"",34.01.08, 8 Kokap
+"",34.01.09, 9 Girimulyo
+"",34.01.10, 10 Nanggulan
+"",34.01.11, 11 Samigaluh
+"",34.01.12, 12 Kalibawang
+"",34.02, 2 KAB. BANTUL
+"","", 1
+"",34.02.01,Srandakan
 34.02.02, 2 Sanden
 34.02.03, 3 Kretek
 34.02.04, 4 Pundong
@@ -4473,44 +4477,46 @@ XV,35,JAWA TIMUR
 35.78.19, 19 Benowo
 "", 20
 35.78.20,Wiyung
-Gayungan 22
-Jambangan 23
-Tenggilis Mejoyo 24
-Gunung Anyar 25
-Mulyorejo 26
-Sukomanunggal 27
-Asem Rowo 28
-Bulak 29
-Pakal 30
-Sambikerep 31
-35.79,KOTA BATU 38
-35.79.01 35.79.02 35.79.03,Batu 1
-"",Bumiaji 2
-"",Junrejo 3
-36,BANTEN
-36.01,KAB. PANDEGLANG 1
-Sumur 1
-Cimanggu 2
-Cibaliung 3
-Cikeusik 4
-Cigeulis 5
-Panimbang 6
-Angsana 7
-Munjul 8
-Pagelaran 9
-Bojong 10
-Picung 11
-Labuan 12
-Menes 13
-Saketi 14
-Cipeucang 15
-Jiput 16
-Mandalawangi 17
-Cimanuk 18
-Kaduhejo 19
-Banjar 20
-Pandeglang 21
-Cadasari 22
+"",35.78.21, 21 Dukuhpakis
+"",35.78.22, 22 Gayungan
+"",35.78.23, 23 Jambangan
+"",35.78.24, 24 Tenggilis Mejoyo
+"",35.78.25, 25 Gunung Anyar
+"",35.78.26, 26 Mulyorejo
+"",35.78.27, 27 Sukomanunggal
+"",35.78.28, 28 Asem Rowo
+"",35.78.29, 29 Bulak
+"",35.78.30, 30 Pakal
+"",35.78.31, 31 Sambikerep
+"",35.79, 38 KOTA BATU
+"",35.79.01, 1 Batu
+"",35.79.02, 2 Bumiaji
+"",35.79.03, 3 Junrejo
+XVI,36,BANTEN
+"",36.01, 1 KAB. PANDEGLANG
+"",36.01.01, 1 Sumur
+"",36.01.02, 2 Cimanggu
+"",36.01.03, 3 Cibaliung
+"",36.01.04, 4 Cikeusik
+"",36.01.05, 5 Cigeulis
+"",36.01.06, 6 Panimbang
+"",36.01.07, 7 Angsana
+"",36.01.08, 8 Munjul
+"",36.01.09, 9 Pagelaran
+"",36.01.10, 10 Bojong
+"",36.01.11, 11 Picung
+"",36.01.12, 12 Labuan
+"",36.01.13, 13 Menes
+"",36.01.14, 14 Saketi
+"",36.01.15, 15 Cipeucang
+"",36.01.16, 16 Jiput
+"",36.01.17, 17 Mandalawangi
+"",36.01.18, 18 Cimanuk
+"",36.01.19, 19 Kaduhejo
+"",36.01.20, 20 Banjar
+"",36.01.21, 21 Pandeglang
+"","", 22
+"",36.01.22,Cadasari
 36.01.23, 23 Cisata
 36.01.24, 24 Patia
 36.01.25, 25 Karang Tanjung
@@ -4632,43 +4638,45 @@ Cadasari 22
 36.71.02, 2 Jatiuwung
 "", 3
 36.71.03,Batuceper
-Cipondoh 5
-Ciledug 6
-Karawaci 7
-Periuk 8
-Cibodas 9
-Neglasari 10
-Pinang 11
-Karang Tengah 12
-Larangan 13
-36.72,KOTA CILEGON 6
-36.72.01 36.72.02 36.72.03 36.72.04 36.72.05 36.72.06 36.72.07 36.72.08,Cibeber 1
-"",Cilegon 2
-"",Pulomerak 3
-"",Ciwandan 4
-"",Jombang 5
-"",Gerogol 6
-"",Purwakarta 7
-"",Citangkil 8
-36.73,KOTA SERANG 7
-36.73.01 36.73.02 36.73.03 36.73.04 36.73.05 36.73.06,Serang 1
-"",Kasemen 2
-"",Walantaka 3
-"",Curug 4
-"",Cipocok Jaya 5
-"",Taktakan 6
-36.74,KOTA TANGERANG SELATAN 8
-36.74.01 36.74.02 36.74.03 36.74.04 36.74.05 36.74.06 36.74.07,Serpong 1
-"",Serpong Utara 2
-"",Pondok Aren 3
-"",Ciputat 4
-"",Ciputat Timur 5
-"",Pamulang 6
-"",Setu 7
-51,BALI
-51.01,KAB. JEMBRANA 1
-Negara 1
-Mendoyo 2
+"",36.71.04, 4 Benda
+"",36.71.05, 5 Cipondoh
+"",36.71.06, 6 Ciledug
+"",36.71.07, 7 Karawaci
+"",36.71.08, 8 Periuk
+"",36.71.09, 9 Cibodas
+"",36.71.10, 10 Neglasari
+"",36.71.11, 11 Pinang
+"",36.71.12, 12 Karang Tengah
+"",36.71.13, 13 Larangan
+"",36.72, 6 KOTA CILEGON
+"",36.72.01, 1 Cibeber
+"",36.72.02, 2 Cilegon
+"",36.72.03, 3 Pulomerak
+"",36.72.04, 4 Ciwandan
+"",36.72.05, 5 Jombang
+"",36.72.06, 6 Gerogol
+"",36.72.07, 7 Purwakarta
+"",36.72.08, 8 Citangkil
+"",36.73, 7 KOTA SERANG
+"",36.73.01, 1 Serang
+"",36.73.02, 2 Kasemen
+"",36.73.03, 3 Walantaka
+"",36.73.04, 4 Curug
+"",36.73.05, 5 Cipocok Jaya
+"",36.73.06, 6 Taktakan
+"",36.74, 8 KOTA TANGERANG SELATAN
+"",36.74.01, 1 Serpong
+"",36.74.02, 2 Serpong Utara
+"",36.74.03, 3 Pondok Aren
+"",36.74.04, 4 Ciputat
+"",36.74.05, 5 Ciputat Timur
+"",36.74.06, 6 Pamulang
+"",36.74.07, 7 Setu
+XVII,51,BALI
+"",51.01, 1 KAB. JEMBRANA
+"",51.01.01, 1 Negara
+"","", 2
+"",51.01.02,Mendoyo
 51.01.03, 3 Pekutatan
 51.01.04, 4 Melaya
 51.01.05, 5 Jembrana
@@ -4870,44 +4878,46 @@ XVIII,52,NUSA TENGGARA BARAT
 52.72, 10 KOTA BIMA
 "", 1
 52.72.01,RasanaE Barat
-Asakota 3
-Raba 4
-Mpunda 5
-53,NUSA TENGGARA TIMUR
-53.01,KAB. KUPANG 1
-53.01.04 53.01.05 53.01.06 53.01.07 53.01.08 53.01.09 53.01.10 53.01.11 53.01.12 53.01.13 53.01.16 53.01.17 53.01.18 53.01.19 53.01.20 53.01.21 53.01.22 53.01.23 53.01.24 53.01.25 53.01.26 53.01.27 53.01.28 53.01.30,Raijua
-"",Sabu Barat
-"",Sabu Timur
-"",Semau 1
-"",Kupang Barat 2
-"",Kupang Timur 3
-"",Sulamu 4
-"",Kupang Tengah 5
-"",Amarasi 6
-"",Fatuleu 7
-"",Takari 8
-"",Amfoang Selatan 9
-"",Amfoang Utara 10
-"",Hawu Mehara
-"",Sabu Liae
-"",Nekamese 11
-"",Amarasi Barat 12
-"",Amarasi Selatan 13
-"",Amarasi Timur 14
-"",Amabi Oefeto Timur 15
-"",Amfoang Barat Daya 16
-"",Amfoang Barat Laut 17
-"",Semau Selatan 18
-"",Taebenu 19
-"",Amabi Oefeto 20
-"",Amfoang Timur 21
-"",Fatuleu Barat 22
-"",Fatuleu Tengah 23
-"",Sabu Tengah
-"",Amfoang Tengah 24
-53.02,KAB TIMOR TENGAH SELATAN 2
-Kota Soe 1
-Mollo Selatan 2
+"",52.72.02, 2 RasanaE Timur
+"",52.72.03, 3 Asakota
+"",52.72.04, 4 Raba
+"",52.72.05, 5 Mpunda
+XIX,53,NUSA TENGGARA TIMUR
+"",53.01, 1 KAB. KUPANG
+"","",Raijua
+"","",Sabu Barat
+"","",Sabu Timur
+"",53.01.04, 1 Semau
+"",53.01.05, 2 Kupang Barat
+"",53.01.06, 3 Kupang Timur
+"",53.01.07, 4 Sulamu
+"",53.01.08, 5 Kupang Tengah
+"",53.01.09, 6 Amarasi
+"",53.01.10, 7 Fatuleu
+"",53.01.11, 8 Takari
+"",53.01.12, 9 Amfoang Selatan
+"",53.01.13, 10 Amfoang Utara
+"","",Hawu Mehara
+"","",Sabu Liae
+"",53.01.16, 11 Nekamese
+"",53.01.17, 12 Amarasi Barat
+"",53.01.18, 13 Amarasi Selatan
+"",53.01.19, 14 Amarasi Timur
+"",53.01.20, 15 Amabi Oefeto Timur
+"",53.01.21, 16 Amfoang Barat Daya
+"",53.01.22, 17 Amfoang Barat Laut
+"",53.01.23, 18 Semau Selatan
+"",53.01.24, 19 Taebenu
+"",53.01.25, 20 Amabi Oefeto
+"",53.01.26, 21 Amfoang Timur
+"",53.01.27, 22 Fatuleu Barat
+"",53.01.28, 23 Fatuleu Tengah
+"","",Sabu Tengah
+"",53.01.30, 24 Amfoang Tengah
+"",53.02, 2 KAB TIMOR TENGAH SELATAN
+"",53.02.01, 1 Kota Soe
+"","", 2
+"",53.02.02,Mollo Selatan
 53.02.03, 3 Mollo Utara
 53.02.04, 4 Amanuban Timur
 53.02.05, 5 Amanuban Tengah
@@ -5754,43 +5764,44 @@ XXII,63,KALIMANTAN SELATAN
 63.09.07, 7 Muara Uya
 "", 8
 63.09.08,Muara Harus
-Upau 10
-Jaro 11
-Bintang Ara 12
-63.10,KAB. TANAH BUMBU 10
-63.10.01 63.10.02 63.10.03 63.10.04 63.10.05 63.10.06 63.10.07 63.10.08 63.10.09 63.10.10,Batu Licin 1
-"",Kusan Hilir 2
-"",Sungai Loban 3
-"",Satui 4
-"",Kusan Hulu 5
-"",Simpang Empat 6
-"",Karang Bintang 7
-"",Mantewe 8
-"",Angsana 9
-"",Kuranji 10
-63.11,KAB. BALANGAN 11
-63.11.01 63.11.02 63.11.03 63.11.04 63.11.05 63.11.06 63.11.07 63.11.08,Juai 1
-"",Halong 2
-"",Awayan 3
-"",Batu Mandi 4
-"",Lampihong 5
-"",Paringin 6
-"",Paringin Selatan 7
-"",Tebing Tinggi 8
-63.71,KOTA BANJARMASIN 12
-63.71.01 63.71.02 63.71.03 63.71.04 63.71.05,Banjarmasin Selatan 1
-"",Banjarmasin Timur 2
-"",Banjarmasin Barat 3
-"",Banjarmasin Utara 4
-"",Banjarmasin Tengah 5
-63.72,KOTA BANJARBARU 13
-63.72.02 63.72.03 63.72.04 63.72.05 63.72.06,Banjarbaru
-"",Landasan Ulin 1
-"",Cempaka 2
-"",Banjarbaru Utara 3
-"",Banjarbaru Selatan 4
-"",Liang Anggang 5
-64,KALIMANTAN TIMUR
+"",63.09.09, 9 Pugaan
+"",63.09.10, 10 Upau
+"",63.09.11, 11 Jaro
+"",63.09.12, 12 Bintang Ara
+"",63.10, 10 KAB. TANAH BUMBU
+"",63.10.01, 1 Batu Licin
+"",63.10.02, 2 Kusan Hilir
+"",63.10.03, 3 Sungai Loban
+"",63.10.04, 4 Satui
+"",63.10.05, 5 Kusan Hulu
+"",63.10.06, 6 Simpang Empat
+"",63.10.07, 7 Karang Bintang
+"",63.10.08, 8 Mantewe
+"",63.10.09, 9 Angsana
+"",63.10.10, 10 Kuranji
+"",63.11, 11 KAB. BALANGAN
+"",63.11.01, 1 Juai
+"",63.11.02, 2 Halong
+"",63.11.03, 3 Awayan
+"",63.11.04, 4 Batu Mandi
+"",63.11.05, 5 Lampihong
+"",63.11.06, 6 Paringin
+"",63.11.07, 7 Paringin Selatan
+"",63.11.08, 8 Tebing Tinggi
+"",63.71, 12 KOTA BANJARMASIN
+"",63.71.01, 1 Banjarmasin Selatan
+"",63.71.02, 2 Banjarmasin Timur
+"",63.71.03, 3 Banjarmasin Barat
+"",63.71.04, 4 Banjarmasin Utara
+"",63.71.05, 5 Banjarmasin Tengah
+"",63.72, 13 KOTA BANJARBARU
+"","",Banjarbaru
+"",63.72.02, 1 Landasan Ulin
+"",63.72.03, 2 Cempaka
+"",63.72.04, 3 Banjarbaru Utara
+"",63.72.05, 4 Banjarbaru Selatan
+"",63.72.06, 5 Liang Anggang
+XXIII,64,KALIMANTAN TIMUR
 64.01, 1 KAB. PASER
 64.01.01, 1 Batu Sopang
 64.01.02, 2 Tanjung Harapan
@@ -5952,43 +5963,44 @@ Bintang Ara 12
 64.72.07, 7 Sambutan
 "", 8
 64.72.08,Sungai Pinang
-"",Loa Janan Ilir 10
-64.73,KOTA TARAKAN 13
-64.73.01 64.73.02 64.73.03 64.73.04,Tarakan Barat 1
-"",Tarakan Tengah 2
-"",Tarakan Timur 3
-"",Tarakan Utara 4
-64.74,KOTA BONTANG 14
-64.74.01 64.74.02 64.74.03,Bontang Utara 1
-"",Bontang Selatan 2
-"",Bontang Barat 3
-71,SULAWESI UTARA
-71.01,KAB. BOLAANG MONGONDOW 1
-Pinogaluman
-Kaidipang
-Bolangitang Barat
-Bintauna
-Sang Tombolang 1
-Posigadan
-Bolaang Uki
-Pinolosian (Barat)
-Dumoga Barat 2
-Dumoga Timur 3
-Dumoga Utara 4
-Lolak 5
-Bolaang 6
-Lolayan 7
-Kotabunan
-Nuangan
-Kotamobagu Barat
-Modayag
-Passi Barat 8
-Poigar 9
-Sangkub
-Passi Timur 10
-Pinolosian Timur
-Bolaangitang Timur
-Kotamobagu Utara
+"",64.72.09, 9 Samarinda Kota
+"",64.72.10, 10 Loa Janan Ilir
+"",64.73, 13 KOTA TARAKAN
+"",64.73.01, 1 Tarakan Barat
+"",64.73.02, 2 Tarakan Tengah
+"",64.73.03, 3 Tarakan Timur
+"",64.73.04, 4 Tarakan Utara
+"",64.74, 14 KOTA BONTANG
+"",64.74.01, 1 Bontang Utara
+"",64.74.02, 2 Bontang Selatan
+"",64.74.03, 3 Bontang Barat
+XXIV,71,SULAWESI UTARA
+"",71.01, 1 KAB. BOLAANG MONGONDOW
+"","",Pinogaluman
+"","",Kaidipang
+"","",Bolangitang Barat
+"","",Bintauna
+"",71.01.05, 1 Sang Tombolang
+"","",Posigadan
+"","",Bolaang Uki
+"","",Pinolosian (Barat)
+"",71.01.09, 2 Dumoga Barat
+"",71.01.10, 3 Dumoga Timur
+"",71.01.11, 4 Dumoga Utara
+"",71.01.12, 5 Lolak
+"",71.01.13, 6 Bolaang
+"",71.01.14, 7 Lolayan
+"","",Kotabunan
+"","",Nuangan
+"","",Kotamobagu Barat
+"","",Modayag
+"",71.01.19, 8 Passi Barat
+"",71.01.20, 9 Poigar
+"","",Sangkub
+"",71.01.22, 10 Passi Timur
+"","",Pinolosian Timur
+"","",Bolaangitang Timur
+"","",Kotamobagu Utara
 "",Kotamobagu Timur
 "",Kotamobagu Selatan
 "",Pinolosian Tengah
@@ -7067,44 +7079,46 @@ XXVIII,75,GORONTALO
 75.04, 4 KAB. PAHUWATO
 "", 1
 75.04.01,Popayato
-Randangan 3
-Marisa 4
-Paguat 5
-Patilanggio 6
-Taluditi 7
-Dengilo 8
-Buntulia 9
-Duhiadaa 10
-Wanggarasi 11
-Popayato Timur 12
-Popayato Barat 13
-75.05,KAB. GORONTALO UTARA 5
-75.05.01 75.05.02 75.05.03 75.05.04 75.05.05 75.05.06 75.05.07 75.05.08 75.05.09 75.05.10 75.05.11,Atinggola 1
-"",Kwandang 2
-"",Anggrek 3
-"",Sumalata 4
-"",Tolinggula 5
-"",Gentuma Raya 6
-"",Tomolito 7
-"",Ponelo Kepulauan 8
-"",Monano 9
-"",Biau 10
-"",Sumalata Timur 11
-75.71,KOTA GORONTALO 6
-75.71.01 75.71.02 75.71.03 75.71.04 75.71.05 75.71.06 75.71.07 75.71.08 75.71.09,Kota Barat 1
-"",Kota Selatan 2
-"",Kota Utara 3
-"",Dungingi 4
-"",Kota Timur 5
-"",Kota Tengah 6
-"",Sipatana 7
-"",Dumbo Raya 8
-"",Hulonthalangi 9
-76,SULAWESI BARAT
-76.01,KAB. MAMUJU UTARA 1
-Bambalamotu 1
-Pasangkayu 2
-Baras 3
+"",75.04.02, 2 Lemito
+"",75.04.03, 3 Randangan
+"",75.04.04, 4 Marisa
+"",75.04.05, 5 Paguat
+"",75.04.06, 6 Patilanggio
+"",75.04.07, 7 Taluditi
+"",75.04.08, 8 Dengilo
+"",75.04.09, 9 Buntulia
+"",75.04.10, 10 Duhiadaa
+"",75.04.11, 11 Wanggarasi
+"",75.04.12, 12 Popayato Timur
+"",75.04.13, 13 Popayato Barat
+"",75.05, 5 KAB. GORONTALO UTARA
+"",75.05.01, 1 Atinggola
+"",75.05.02, 2 Kwandang
+"",75.05.03, 3 Anggrek
+"",75.05.04, 4 Sumalata
+"",75.05.05, 5 Tolinggula
+"",75.05.06, 6 Gentuma Raya
+"",75.05.07, 7 Tomolito
+"",75.05.08, 8 Ponelo Kepulauan
+"",75.05.09, 9 Monano
+"",75.05.10, 10 Biau
+"",75.05.11, 11 Sumalata Timur
+"",75.71, 6 KOTA GORONTALO
+"",75.71.01, 1 Kota Barat
+"",75.71.02, 2 Kota Selatan
+"",75.71.03, 3 Kota Utara
+"",75.71.04, 4 Dungingi
+"",75.71.05, 5 Kota Timur
+"",75.71.06, 6 Kota Tengah
+"",75.71.07, 7 Sipatana
+"",75.71.08, 8 Dumbo Raya
+"",75.71.09, 9 Hulonthalangi
+XXIX,76,SULAWESI BARAT
+"",76.01, 1 KAB. MAMUJU UTARA
+"",76.01.01, 1 Bambalamotu
+"",76.01.02, 2 Pasangkayu
+"","", 3
+"",76.01.03,Baras
 76.01.04, 4 Sarudu
 76.01.05, 5 Dapurang
 76.01.06, 6 Duripoku
@@ -7306,43 +7320,45 @@ XXX,81,MALUKU
 81.08.04, 4 Pulau-Pulau Babar
 "", 5
 81.08.05,Pulau-pulau Babar Timur
-Pulau-pulau Terselatan 7
-Pulau Leti 8
-Pulau Masela 9
-Dawelor Dawera 10
-Pulau Wetang 11
-Pulau Lakor 12
-Wetar Utara 13
-Wetar Barat 14
-Wetar Timur 15
-Kepulauan Romang 16
-Kisar Utara 17
-81.09,KAB. BURU SELATAN 9
-81.09.01 81.09.02 81.09.03 81.09.04 81.09.05 81.09.06,Namrole 1
-"",Waesama 2
-"",Ambalau 3
-"",Kepala Madan 4
-"",Leksula 5
-"",Fena Fafan 6
-81.71,KOTA AMBON 10
-81.71.01 81.71.02 81.71.03 81.71.04 81.71.05,Nusaniwe 1
-"",Sirimau 2
-"",Baguala 3
-"",Teluk Ambon 4
-"",Leitimur Selatan 5
-81.72,KOTA TUAL 11
-81.72.01 81.72.02 81.72.03 81.72.04 81.72.05,Pulau Dullah Utara 1
-"",Pulau Dullah Selatan 2
-"",Tayando Tam 3
-"",Pulau-Pulau Kur 4
-"",Kur Selatan 5
-82,MALUKU UTARA
-82.01,KAB. HALMAHERA BARAT 1
-Jailolo 1
-Loloda 2
-Ibu 3
-Sahu 4
-Jailolo Selatan 5
+"",81.08.06, 6 Wetar
+"",81.08.07, 7 Pulau-pulau Terselatan
+"",81.08.08, 8 Pulau Leti
+"",81.08.09, 9 Pulau Masela
+"",81.08.10, 10 Dawelor Dawera
+"",81.08.11, 11 Pulau Wetang
+"",81.08.12, 12 Pulau Lakor
+"",81.08.13, 13 Wetar Utara
+"",81.08.14, 14 Wetar Barat
+"",81.08.15, 15 Wetar Timur
+"",81.08.16, 16 Kepulauan Romang
+"",81.08.17, 17 Kisar Utara
+"",81.09, 9 KAB. BURU SELATAN
+"",81.09.01, 1 Namrole
+"",81.09.02, 2 Waesama
+"",81.09.03, 3 Ambalau
+"",81.09.04, 4 Kepala Madan
+"",81.09.05, 5 Leksula
+"",81.09.06, 6 Fena Fafan
+"",81.71, 10 KOTA AMBON
+"",81.71.01, 1 Nusaniwe
+"",81.71.02, 2 Sirimau
+"",81.71.03, 3 Baguala
+"",81.71.04, 4 Teluk Ambon
+"",81.71.05, 5 Leitimur Selatan
+"",81.72, 11 KOTA TUAL
+"",81.72.01, 1 Pulau Dullah Utara
+"",81.72.02, 2 Pulau Dullah Selatan
+"",81.72.03, 3 Tayando Tam
+"",81.72.04, 4 Pulau-Pulau Kur
+"",81.72.05, 5 Kur Selatan
+XXXI,82,MALUKU UTARA
+"",82.01, 1 KAB. HALMAHERA BARAT
+"",82.01.01, 1 Jailolo
+"",82.01.02, 2 Loloda
+"",82.01.03, 3 Ibu
+"",82.01.04, 4 Sahu
+"","", 5
+"",82.01.05,Jailolo Selatan
 "",Jailolo Timur
 82.01.07, 6 Ibu Utara
 82.01.08, 7 Ibu Selatan
@@ -8025,43 +8041,45 @@ XXXII,91,P A P U A
 91.26.09, 9 Mapia Tengah
 91.26.10, 10 Dogiyai
 91.27, 27KAB. INTAN JAYA
-Homeyo 2
-Wandai 3
-Biandoga 4
-Agisiga 5
-Hitadipa 6
-91.28,KAB. DEIYAI 28
-91.28.01 91.28.02 91.28.03 91.28.04 91.28.05,Tigi 1
-"",Tigi Timur 2
-"",Bowobado 3
-"",Tigi Barat 4
-"",Kapiraya 5
-91.71,KOTA JAYAPURA 29
-91.71.01 91.71.02 91.71.03 91.71.04 91.71.05,Jayapura Utara 1
-"",Jayapura Selatan 2
-"",Abepura 3
-"",Muara Tami 4
-"",Heram 5
-92,PAPUA BARAT
-92.01,KAB. SORONG 1
-Makbon 1
-Moraid
-Sausapor
-Beraur 2
-Salawati 3
-Seget 4
-Aimas 5
-Klamono 6
-Fef
-Sayosa 7
-Abun
-Segun 8
-Mayamuk 9
-Salawati Selatan 10
-Miyah
-Yembun
-Klabot 11
-Klawak 12
+"",91.27.01, 1 Sugapa
+"",91.27.02, 2 Homeyo
+"",91.27.03, 3 Wandai
+"",91.27.04, 4 Biandoga
+"",91.27.05, 5 Agisiga
+"",91.27.06, 6 Hitadipa
+"",91.28, 28 KAB. DEIYAI
+"",91.28.01, 1 Tigi
+"",91.28.02, 2 Tigi Timur
+"",91.28.03, 3 Bowobado
+"",91.28.04, 4 Tigi Barat
+"",91.28.05, 5 Kapiraya
+"",91.71, 29 KOTA JAYAPURA
+"",91.71.01, 1 Jayapura Utara
+"",91.71.02, 2 Jayapura Selatan
+"",91.71.03, 3 Abepura
+"",91.71.04, 4 Muara Tami
+"",91.71.05, 5 Heram
+XXXIII,92,PAPUA BARAT
+"",92.01, 1 KAB. SORONG
+"",92.01.01, 1 Makbon
+"","",Moraid
+"","",Sausapor
+"",92.01.04, 2 Beraur
+"",92.01.05, 3 Salawati
+"",92.01.06, 4 Seget
+"",92.01.07, 5 Aimas
+"",92.01.08, 6 Klamono
+"","",Fef
+"",92.01.10, 7 Sayosa
+"","",Abun
+"",92.01.12, 8 Segun
+"",92.01.13, 9 Mayamuk
+"",92.01.14, 10 Salawati Selatan
+"","",Miyah
+"","",Yembun
+"",92.01.17, 11 Klabot
+"","", 12
+"",92.01.18,Klawak
 "",Kwoor
 92.01.20, 13 Maudus
 "",Syujak
