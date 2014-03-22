@@ -31,9 +31,44 @@
         <h3>
 <a name="about-idn-adm-div-ont" class="anchor" href="#about-idn-adm-div-ont"><span class="octicon octicon-link"></span></a>About idn-adm-div-ont</h3>
 
-<p>This repository holds an ontology that attempts to reflect the official, current administrative division structure in Indonesia. The current approach being taken is to fetch data from Kemdagri's (the Indonesian Interior Ministry) master reference and build an ontology model based on that. There will also be mappings to other ontologies, such as GeoNames, schema.org, etc.</p>
+<p>This repository holds an OWL ontology and knowledge base that attempts to reflect the official, current administrative division structure in Indonesia. The current approach being taken is to fetch data from Kemdagri's (the Indonesian Interior Ministry) master reference and build an ontology model based on that. There will also be mappings to other ontologies, such as GeoNames, schema.org, etc. The OWL files are stored in the Turtle syntax.</p>
 
-<p>You can find the current ontology in Turtle format at<br><a href="https://raw.githubusercontent.com/benangmerah/idn-adm-div-ont/master/ontology.ttl">https://raw.githubusercontent.com/benangmerah/idn-adm-div-ont/master/ontology.ttl</a>.</p>
+<h4>
+<a name="ontology" class="anchor" href="#ontology"><span class="octicon octicon-link"></span></a>Ontology</h4>
+
+<p>The OWL ontology (schema, if you may) is available in Turtle format <a href="https://raw.githubusercontent.com/benangmerah/idn-adm-div-ont/master/ontology.ttl">from the repository</a>. At present, the ontology describes the four levels of administrative divisions in Indonesia: Provinsi, Kabupaten/Kota, Kecamatan/Distrik, and Desa/Kelurahan and the parent/child relationships between them.</p>
+
+<h4>
+<a name="knowledge-base" class="anchor" href="#knowledge-base"><span class="octicon octicon-link"></span></a>Knowledge base</h4>
+
+<p>The OWL knowledge base is derived from a CSV extracted using <a href="http://tabula.nerdpower.org/">Tabula</a> from the PDF of <a href="http://www.kemendagri.go.id/pages/data-wilayah">Buku Induk Kode dan Wilayah Administrasi Pemerintahan Per Provinsi, Kabupaten/Kota dan Kecamatan Seluruh Indonesia</a>, which was legalised as <strong>Lampiran I Permendagri No. 18/2013</strong>, with several mistruncated words corrected based on information on the document itself, as well as abbreviations expanded.</p>
+
+<p>Note that the Permendagri does not include recent establishments of new divisions, such as the province of Kalimantan Utara and many kabupatens around Indonesia. Nonetheless, this knowledgebase uses the Permendagri as its basis. Other possible sources, such as <a href="http://kodepos.nomor.net/">http://kodepos.nomor.net/</a>, will be incorporated in the future.</p>
+
+<p>The knowledge base assigns URIs to each administrative division in the following format:</p>
+
+<pre><code>http://sw.benangmerah.net/place/idn/[provinsi]/[kabupaten-kota]/[kecamatan]
+</code></pre>
+
+<p>Where:</p>
+
+<ul>
+<li>
+<code>provinsi</code> is the <code>slugified-name</code> of the province, according to the Permendagri. Note that:
+
+<ul>
+<li>Daerah Istimewa Yogyakarta, referred as Daista Yogyakarta in the Permendagri, is written as <code>daerah-istimewa-yogyakarta</code>, not <code>daista-yogyakarta</code>, <code>yogyakarta</code>, nor <code>diy</code>.</li>
+<li>DKI Jakarta, on the other hand, is written as <code>dki-jakarta</code>, not <code>daerah-khusus-ibukota-jakarta</code>, <code>jakarta</code>, nor <code>dki</code>.</li>
+<li>Aceh is written as <code>aceh</code>, as it is its official name according to UU No. 11/2006</li>
+</ul>
+</li>
+<li>
+<code>kabupaten-kota</code> is the <code>slugified-name</code> of the kabupaten/kota, <em>including</em> the word <code>kabupaten</code> or <code>kota</code>. The abbreviation Kab. in the Permendagri is expanded. Note that the subdivisions of DKI Jakarta are officially termed "Kota Administratif" and "Kabupaten Administratif".</li>
+<li>
+<code>kecamatan</code> is the <code>slugified-name</code> of the kecamatan/distrik, <em>not including</em> the word <code>kecamatan</code> nor <code>distrik</code>.</li>
+</ul><p>Each resource is <code>rdfs:label</code>-ed by its name according to the Permendagri.</p>
+
+<p>The OWL ontology (schema, if you may) is available in Turtle format <a href="https://raw.githubusercontent.com/benangmerah/idn-adm-div-ont/master/instances.ttl">from the repository</a>.</p>
 
 <h3>
 <a name="about-benangmerah" class="anchor" href="#about-benangmerah"><span class="octicon octicon-link"></span></a>About BenangMerah</h3>
