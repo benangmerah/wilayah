@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "dependencies": {
+    "underscore.string": "~2.3.3",
+    "csv": "~0.3.7",
+    "n3": "~0.2.5"
+  }
+}
