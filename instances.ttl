@@ -8227,205 +8227,205 @@
     rdfs:label "DKI Jakarta", "DKI Jakarta"@id;
     :hasGovernmentCode "31";
     rdfs:label "Jakarta", "DKI".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kabupaten-administratif-kepulauan-seribu> a :KabupatenAdministratif;
-    rdfs:label "Kabupaten Administratif Kepulauan Seribu", "Kepulauan Seribu", "Kab. Adm. Kepulauan Seribu", "Kabupaten Administratif Kepulauan Seribu"@id, "Kepulauan Seribu"@id, "Kab. Adm. Kepulauan Seribu"@id;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kabupaten-administrasi-kepulauan-seribu> a :KabupatenAdministrasi;
+    rdfs:label "Kabupaten Administrasi Kepulauan Seribu", "Kepulauan Seribu", "Kab. Adm. Kepulauan Seribu", "Kabupaten Administrasi Kepulauan Seribu"@id, "Kepulauan Seribu"@id, "Kab. Adm. Kepulauan Seribu"@id;
     :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta>;
     :hasGovernmentCode "31.01".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kabupaten-administratif-kepulauan-seribu/kepulauan-seribu-utara> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kabupaten-administrasi-kepulauan-seribu/kepulauan-seribu-utara> a :Kecamatan;
     rdfs:label "Kepulauan Seribu Utara", "Kecamatan Kepulauan Seribu Utara", "Kepulauan Seribu Utara"@id, "Kecamatan Kepulauan Seribu Utara"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kabupaten-administratif-kepulauan-seribu>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kabupaten-administrasi-kepulauan-seribu>;
     :hasGovernmentCode "31.01.01".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kabupaten-administratif-kepulauan-seribu/kepulauan-seribu-selatan> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kabupaten-administrasi-kepulauan-seribu/kepulauan-seribu-selatan> a :Kecamatan;
     rdfs:label "Kepulauan Seribu Selatan.", "Kecamatan Kepulauan Seribu Selatan.", "Kepulauan Seribu Selatan."@id, "Kecamatan Kepulauan Seribu Selatan."@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kabupaten-administratif-kepulauan-seribu>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kabupaten-administrasi-kepulauan-seribu>;
     :hasGovernmentCode "31.01.02".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-pusat> a :KotaAdministratif;
-    rdfs:label "Kota Administratif Jakarta Pusat", "Jakarta Pusat", "Kota Adm. Jakarta Pusat", "Kota Administratif Jakarta Pusat"@id, "Jakarta Pusat"@id, "Kota Adm. Jakarta Pusat"@id;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-pusat> a :KotaAdministrasi;
+    rdfs:label "Kota Administrasi Jakarta Pusat", "Jakarta Pusat", "Kota Adm. Jakarta Pusat", "Kota Administrasi Jakarta Pusat"@id, "Jakarta Pusat"@id, "Kota Adm. Jakarta Pusat"@id;
     :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta>;
     :hasGovernmentCode "31.71".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-pusat/gambir> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-pusat/gambir> a :Kecamatan;
     rdfs:label "Gambir", "Kecamatan Gambir", "Gambir"@id, "Kecamatan Gambir"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-pusat>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-pusat>;
     :hasGovernmentCode "31.71.01".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-pusat/sawah-besar> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-pusat/sawah-besar> a :Kecamatan;
     rdfs:label "Sawah Besar", "Kecamatan Sawah Besar", "Sawah Besar"@id, "Kecamatan Sawah Besar"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-pusat>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-pusat>;
     :hasGovernmentCode "31.71.02".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-pusat/kemayoran> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-pusat/kemayoran> a :Kecamatan;
     rdfs:label "Kemayoran", "Kecamatan Kemayoran", "Kemayoran"@id, "Kecamatan Kemayoran"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-pusat>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-pusat>;
     :hasGovernmentCode "31.71.03".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-pusat/senen> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-pusat/senen> a :Kecamatan;
     rdfs:label "Senen", "Kecamatan Senen", "Senen"@id, "Kecamatan Senen"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-pusat>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-pusat>;
     :hasGovernmentCode "31.71.04".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-pusat/cempaka-putih> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-pusat/cempaka-putih> a :Kecamatan;
     rdfs:label "Cempaka Putih", "Kecamatan Cempaka Putih", "Cempaka Putih"@id, "Kecamatan Cempaka Putih"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-pusat>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-pusat>;
     :hasGovernmentCode "31.71.05".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-pusat/menteng> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-pusat/menteng> a :Kecamatan;
     rdfs:label "Menteng", "Kecamatan Menteng", "Menteng"@id, "Kecamatan Menteng"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-pusat>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-pusat>;
     :hasGovernmentCode "31.71.06".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-pusat/tanah-abang> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-pusat/tanah-abang> a :Kecamatan;
     rdfs:label "Tanah Abang", "Kecamatan Tanah Abang", "Tanah Abang"@id, "Kecamatan Tanah Abang"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-pusat>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-pusat>;
     :hasGovernmentCode "31.71.07".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-pusat/johar-baru> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-pusat/johar-baru> a :Kecamatan;
     rdfs:label "Johar Baru", "Kecamatan Johar Baru", "Johar Baru"@id, "Kecamatan Johar Baru"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-pusat>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-pusat>;
     :hasGovernmentCode "31.71.08".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-utara> a :KotaAdministratif;
-    rdfs:label "Kota Administratif Jakarta Utara", "Jakarta Utara", "Kota Adm. Jakarta Utara", "Kota Administratif Jakarta Utara"@id, "Jakarta Utara"@id, "Kota Adm. Jakarta Utara"@id;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-utara> a :KotaAdministrasi;
+    rdfs:label "Kota Administrasi Jakarta Utara", "Jakarta Utara", "Kota Adm. Jakarta Utara", "Kota Administrasi Jakarta Utara"@id, "Jakarta Utara"@id, "Kota Adm. Jakarta Utara"@id;
     :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta>;
     :hasGovernmentCode "31.72".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-utara/penjaringan> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-utara/penjaringan> a :Kecamatan;
     rdfs:label "Penjaringan", "Kecamatan Penjaringan", "Penjaringan"@id, "Kecamatan Penjaringan"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-utara>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-utara>;
     :hasGovernmentCode "31.72.01".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-utara/tanjung-priok> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-utara/tanjung-priok> a :Kecamatan;
     rdfs:label "Tanjung Priok", "Kecamatan Tanjung Priok", "Tanjung Priok"@id, "Kecamatan Tanjung Priok"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-utara>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-utara>;
     :hasGovernmentCode "31.72.02".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-utara/koja> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-utara/koja> a :Kecamatan;
     rdfs:label "Koja", "Kecamatan Koja", "Koja"@id, "Kecamatan Koja"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-utara>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-utara>;
     :hasGovernmentCode "31.72.03".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-utara/cilincing> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-utara/cilincing> a :Kecamatan;
     rdfs:label "Cilincing", "Kecamatan Cilincing", "Cilincing"@id, "Kecamatan Cilincing"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-utara>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-utara>;
     :hasGovernmentCode "31.72.04".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-utara/pademangan> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-utara/pademangan> a :Kecamatan;
     rdfs:label "Pademangan", "Kecamatan Pademangan", "Pademangan"@id, "Kecamatan Pademangan"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-utara>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-utara>;
     :hasGovernmentCode "31.72.05".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-utara/kelapa-gading> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-utara/kelapa-gading> a :Kecamatan;
     rdfs:label "Kelapa Gading", "Kecamatan Kelapa Gading", "Kelapa Gading"@id, "Kecamatan Kelapa Gading"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-utara>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-utara>;
     :hasGovernmentCode "31.72.06".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-barat> a :KotaAdministratif;
-    rdfs:label "Kota Administratif Jakarta Barat", "Jakarta Barat", "Kota Adm. Jakarta Barat", "Kota Administratif Jakarta Barat"@id, "Jakarta Barat"@id, "Kota Adm. Jakarta Barat"@id;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-barat> a :KotaAdministrasi;
+    rdfs:label "Kota Administrasi Jakarta Barat", "Jakarta Barat", "Kota Adm. Jakarta Barat", "Kota Administrasi Jakarta Barat"@id, "Jakarta Barat"@id, "Kota Adm. Jakarta Barat"@id;
     :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta>;
     :hasGovernmentCode "31.73".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-barat/cengkareng> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-barat/cengkareng> a :Kecamatan;
     rdfs:label "Cengkareng", "Kecamatan Cengkareng", "Cengkareng"@id, "Kecamatan Cengkareng"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-barat>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-barat>;
     :hasGovernmentCode "31.73.01".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-barat/grogol-petamburan> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-barat/grogol-petamburan> a :Kecamatan;
     rdfs:label "Grogol Petamburan", "Kecamatan Grogol Petamburan", "Grogol Petamburan"@id, "Kecamatan Grogol Petamburan"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-barat>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-barat>;
     :hasGovernmentCode "31.73.02".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-barat/taman-sari> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-barat/taman-sari> a :Kecamatan;
     rdfs:label "Taman Sari", "Kecamatan Taman Sari", "Taman Sari"@id, "Kecamatan Taman Sari"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-barat>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-barat>;
     :hasGovernmentCode "31.73.03".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-barat/tambora> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-barat/tambora> a :Kecamatan;
     rdfs:label "Tambora", "Kecamatan Tambora", "Tambora"@id, "Kecamatan Tambora"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-barat>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-barat>;
     :hasGovernmentCode "31.73.04".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-barat/kebon-jeruk> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-barat/kebon-jeruk> a :Kecamatan;
     rdfs:label "Kebon Jeruk", "Kecamatan Kebon Jeruk", "Kebon Jeruk"@id, "Kecamatan Kebon Jeruk"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-barat>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-barat>;
     :hasGovernmentCode "31.73.05".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-barat/kalideres> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-barat/kalideres> a :Kecamatan;
     rdfs:label "Kalideres", "Kecamatan Kalideres", "Kalideres"@id, "Kecamatan Kalideres"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-barat>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-barat>;
     :hasGovernmentCode "31.73.06".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-barat/pal-merah> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-barat/pal-merah> a :Kecamatan;
     rdfs:label "Pal Merah", "Kecamatan Pal Merah", "Pal Merah"@id, "Kecamatan Pal Merah"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-barat>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-barat>;
     :hasGovernmentCode "31.73.07".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-barat/kembangan> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-barat/kembangan> a :Kecamatan;
     rdfs:label "Kembangan", "Kecamatan Kembangan", "Kembangan"@id, "Kecamatan Kembangan"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-barat>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-barat>;
     :hasGovernmentCode "31.73.08".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan> a :KotaAdministratif;
-    rdfs:label "Kota Administratif Jakarta Selatan", "Jakarta Selatan", "Kota Adm. Jakarta Selatan", "Kota Administratif Jakarta Selatan"@id, "Jakarta Selatan"@id, "Kota Adm. Jakarta Selatan"@id;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan> a :KotaAdministrasi;
+    rdfs:label "Kota Administrasi Jakarta Selatan", "Jakarta Selatan", "Kota Adm. Jakarta Selatan", "Kota Administrasi Jakarta Selatan"@id, "Jakarta Selatan"@id, "Kota Adm. Jakarta Selatan"@id;
     :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta>;
     :hasGovernmentCode "31.74".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan/tebet> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan/tebet> a :Kecamatan;
     rdfs:label "Tebet", "Kecamatan Tebet", "Tebet"@id, "Kecamatan Tebet"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan>;
     :hasGovernmentCode "31.74.01".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan/setiabudi> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan/setiabudi> a :Kecamatan;
     rdfs:label "Setiabudi", "Kecamatan Setiabudi", "Setiabudi"@id, "Kecamatan Setiabudi"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan>;
     :hasGovernmentCode "31.74.02".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan/mampang-prapatan> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan/mampang-prapatan> a :Kecamatan;
     rdfs:label "Mampang Prapatan", "Kecamatan Mampang Prapatan", "Mampang Prapatan"@id, "Kecamatan Mampang Prapatan"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan>;
     :hasGovernmentCode "31.74.03".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan/pasar-minggu> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan/pasar-minggu> a :Kecamatan;
     rdfs:label "Pasar Minggu", "Kecamatan Pasar Minggu", "Pasar Minggu"@id, "Kecamatan Pasar Minggu"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan>;
     :hasGovernmentCode "31.74.04".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan/kebayoran-lama> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan/kebayoran-lama> a :Kecamatan;
     rdfs:label "Kebayoran Lama", "Kecamatan Kebayoran Lama", "Kebayoran Lama"@id, "Kecamatan Kebayoran Lama"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan>;
     :hasGovernmentCode "31.74.05".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan/cilandak> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan/cilandak> a :Kecamatan;
     rdfs:label "Cilandak", "Kecamatan Cilandak", "Cilandak"@id, "Kecamatan Cilandak"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan>;
     :hasGovernmentCode "31.74.06".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan/kebayoran-baru> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan/kebayoran-baru> a :Kecamatan;
     rdfs:label "Kebayoran Baru", "Kecamatan Kebayoran Baru", "Kebayoran Baru"@id, "Kecamatan Kebayoran Baru"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan>;
     :hasGovernmentCode "31.74.07".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan/pancoran> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan/pancoran> a :Kecamatan;
     rdfs:label "Pancoran", "Kecamatan Pancoran", "Pancoran"@id, "Kecamatan Pancoran"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan>;
     :hasGovernmentCode "31.74.08".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan/jagakarsa> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan/jagakarsa> a :Kecamatan;
     rdfs:label "Jagakarsa", "Kecamatan Jagakarsa", "Jagakarsa"@id, "Kecamatan Jagakarsa"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan>;
     :hasGovernmentCode "31.74.09".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan/pesanggrahan> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan/pesanggrahan> a :Kecamatan;
     rdfs:label "Pesanggrahan", "Kecamatan Pesanggrahan", "Pesanggrahan"@id, "Kecamatan Pesanggrahan"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-selatan>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-selatan>;
     :hasGovernmentCode "31.74.10".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur> a :KotaAdministratif;
-    rdfs:label "Kota Administratif Jakarta Timur", "Jakarta Timur", "Kota Adm. Jakarta Timur", "Kota Administratif Jakarta Timur"@id, "Jakarta Timur"@id, "Kota Adm. Jakarta Timur"@id;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur> a :KotaAdministrasi;
+    rdfs:label "Kota Administrasi Jakarta Timur", "Jakarta Timur", "Kota Adm. Jakarta Timur", "Kota Administrasi Jakarta Timur"@id, "Jakarta Timur"@id, "Kota Adm. Jakarta Timur"@id;
     :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta>;
     :hasGovernmentCode "31.75".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur/matraman> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur/matraman> a :Kecamatan;
     rdfs:label "Matraman", "Kecamatan Matraman", "Matraman"@id, "Kecamatan Matraman"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur>;
     :hasGovernmentCode "31.75.01".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur/pulogadung> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur/pulogadung> a :Kecamatan;
     rdfs:label "Pulogadung", "Kecamatan Pulogadung", "Pulogadung"@id, "Kecamatan Pulogadung"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur>;
     :hasGovernmentCode "31.75.02".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur/jatinegara> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur/jatinegara> a :Kecamatan;
     rdfs:label "Jatinegara", "Kecamatan Jatinegara", "Jatinegara"@id, "Kecamatan Jatinegara"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur>;
     :hasGovernmentCode "31.75.03".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur/kramatjati> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur/kramatjati> a :Kecamatan;
     rdfs:label "Kramatjati", "Kecamatan Kramatjati", "Kramatjati"@id, "Kecamatan Kramatjati"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur>;
     :hasGovernmentCode "31.75.04".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur/pasar-rebo> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur/pasar-rebo> a :Kecamatan;
     rdfs:label "Pasar Rebo", "Kecamatan Pasar Rebo", "Pasar Rebo"@id, "Kecamatan Pasar Rebo"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur>;
     :hasGovernmentCode "31.75.05".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur/cakung> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur/cakung> a :Kecamatan;
     rdfs:label "Cakung", "Kecamatan Cakung", "Cakung"@id, "Kecamatan Cakung"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur>;
     :hasGovernmentCode "31.75.06".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur/duren-sawit> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur/duren-sawit> a :Kecamatan;
     rdfs:label "Duren Sawit", "Kecamatan Duren Sawit", "Duren Sawit"@id, "Kecamatan Duren Sawit"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur>;
     :hasGovernmentCode "31.75.07".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur/makasar> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur/makasar> a :Kecamatan;
     rdfs:label "Makasar", "Kecamatan Makasar", "Makasar"@id, "Kecamatan Makasar"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur>;
     :hasGovernmentCode "31.75.08".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur/ciracas> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur/ciracas> a :Kecamatan;
     rdfs:label "Ciracas", "Kecamatan Ciracas", "Ciracas"@id, "Kecamatan Ciracas"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur>;
     :hasGovernmentCode "31.75.09".
-<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur/cipayung> a :Kecamatan;
+<http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur/cipayung> a :Kecamatan;
     rdfs:label "Cipayung", "Kecamatan Cipayung", "Cipayung"@id, "Kecamatan Cipayung"@id;
-    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administratif-jakarta-timur>;
+    :hasParent <http://sw.benangmerah.net/place/idn/dki-jakarta/kota-administrasi-jakarta-timur>;
     :hasGovernmentCode "31.75.10".
 <http://sw.benangmerah.net/place/idn/jawa-barat> a :Provinsi;
     rdfs:label "Jawa Barat", "Jawa Barat"@id;

@@ -23,7 +23,7 @@ var nameReplace = {
   '^Daista': 'Daerah Istimewa',
   '^DKI': 'DKI',
   '^Kab\\.?': 'Kabupaten',
-  'Adm.': 'Administratif',
+  'Adm.': 'Administrasi',
 
   // More specific replacements...
   'Siau Tagulandang B$': 'Siau Tagulandang Biaro',
@@ -176,12 +176,12 @@ csv()
 
             var type = 'Kabupaten';
             var shortLabel = 'Kab. ';
-            if (regencyName.match(/^Kabupaten Administratif/)) {
-              type = 'KabupatenAdministratif';
+            if (regencyName.match(/^Kabupaten Administrasi/)) {
+              type = 'KabupatenAdministrasi';
               shortLabel = 'Kab. Adm. ';
             }
-            else if (regencyName.match(/^Kota Administratif/)) {
-              type = 'KotaAdministratif';
+            else if (regencyName.match(/^Kota Administrasi/)) {
+              type = 'KotaAdministrasi';
               shortLabel = 'Kota Adm. ';
             }
             else if (regencyName.match(/^Kota/)) {
@@ -189,7 +189,7 @@ csv()
               shortLabel = 'Kota ';
             }
 
-            var labelMatch = regencyName.match(/^(?:Kabupaten|Kota)(?: Administratif)? (.+)/);
+            var labelMatch = regencyName.match(/^(?:Kabupaten|Kota)(?: Administrasi)? (.+)/);
             var label = labelMatch[1];
             shortLabel += label;
 
