@@ -8,12 +8,12 @@ var fs = require('fs'),
 var rdfNS = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#';
 var rdfsNS = 'http://www.w3.org/2000/01/rdf-schema#';
 var owlNS = 'http://www.w3.org/2002/07/owl#';
-var iadoNS = 'http://sw.benangmerah.net/ontology/idn-adm-div/';
-var placeNS = 'http://sw.benangmerah.net/place/idn/';
+var ontNS = 'http://benangmerah.net/ontology/';
+var placeNS = 'http://benangmerah.net/place/';
 var kodwilNS = 'urn:kode-wilayah-indonesia:';
 
-var inputCSV = '../datasources/permendagri-18-2013/buku-induk.tabula-processed.csv';
-var outputTurtle = '../instances.ttl';
+var inputCSV = './datasources/permendagri-18-2013/buku-induk.tabula-processed.csv';
+var outputTurtle = './instances.ttl';
 
 var nameReplace = {
   '\\s+': ' ',
@@ -94,7 +94,7 @@ csv()
       'rdfs': rdfsNS,
       'owl': owlNS,
       'wil': kodwilNS,
-      '': iadoNS
+      '': ontNS
     });
 
     rows.forEach(function(row) {
@@ -121,10 +121,10 @@ csv()
           currentFactualProvince = currentProvince;
 
           var uri = placeURI(provinceName);
-          triples.addTriple(uri, rdfNS + 'type', iadoNS + 'Provinsi');
+          triples.addTriple(uri, rdfNS + 'type', ontNS + 'Provinsi');
           triples.addTriple(uri, rdfsNS + 'label', lit(provinceName));
           triples.addTriple(uri, rdfsNS + 'label', lit(provinceName) + '@id');
-          triples.addTriple(uri, iadoNS + 'hasGovernmentCode', lit(divisionCode));
+          triples.addTriple(uri, ontNS + 'hasGovernmentCode', lit(divisionCode));
           // triples.addTriple(kodwilNS + divisionCode, owlNS + 'sameAs', uri);
 
           if (/Yogyakarta$/.test(provinceName)) {
@@ -161,7 +161,7 @@ csv()
 
               if (!addedKalimantanUtara) {
                 var kalimantanUtaraUri = placeURI('Kalimantan Utara');
-                triples.addTriple(kalimantanUtaraUri, rdfNS + 'type', iadoNS + 'Provinsi');
+                triples.addTriple(kalimantanUtaraUri, rdfNS + 'type', ontNS + 'Provinsi');
                 triples.addTriple(kalimantanUtaraUri, rdfsNS + 'label', '"Kalimantan Utara"');
                 triples.addTriple(kalimantanUtaraUri, rdfsNS + 'label', '"Kalimantan Utara"@id');
                 addedKalimantanUtara = true;
@@ -193,15 +193,15 @@ csv()
             var label = labelMatch[1];
             shortLabel += label;
 
-            triples.addTriple(uri, rdfNS + 'type', iadoNS + type);
+            triples.addTriple(uri, rdfNS + 'type', ontNS + type);
             triples.addTriple(uri, rdfsNS + 'label', lit(regencyName));
             triples.addTriple(uri, rdfsNS + 'label', lit(label));
             triples.addTriple(uri, rdfsNS + 'label', lit(shortLabel));
             triples.addTriple(uri, rdfsNS + 'label', lit(regencyName) + '@id');
             triples.addTriple(uri, rdfsNS + 'label', lit(label) + '@id');
             triples.addTriple(uri, rdfsNS + 'label', lit(shortLabel) + '@id');
-            triples.addTriple(uri, iadoNS + 'hasParent', provinceURI);
-            triples.addTriple(uri, iadoNS + 'hasGovernmentCode', lit(divisionCode));
+            triples.addTriple(uri, ontNS + 'hasParent', provinceURI);
+            triples.addTriple(uri, ontNS + 'hasGovernmentCode', lit(divisionCode));
             // triples.addTriple(kodwilNS + divisionCode, owlNS + 'sameAs', uri);
           }
           else {
@@ -226,13 +226,13 @@ csv()
             // 'Kecamatan' in Papua and Papua Barat is called 'Distrik'
             var type = /^Papua/.test(currentFactualProvince) ? 'Distrik' : 'Kecamatan';
 
-            triples.addTriple(uri, rdfNS + 'type', iadoNS + type);
+            triples.addTriple(uri, rdfNS + 'type', ontNS + type);
             triples.addTriple(uri, rdfsNS + 'label', lit(districtName));
             triples.addTriple(uri, rdfsNS + 'label', lit(type + ' ' + districtName));
             triples.addTriple(uri, rdfsNS + 'label', lit(districtName) + '@id');
             triples.addTriple(uri, rdfsNS + 'label', lit(type + ' ' + districtName) + '@id');
-            triples.addTriple(uri, iadoNS + 'hasParent', regencyURI);
-            triples.addTriple(uri, iadoNS + 'hasGovernmentCode', lit(divisionCode));
+            triples.addTriple(uri, ontNS + 'hasParent', regencyURI);
+            triples.addTriple(uri, ontNS + 'hasGovernmentCode', lit(divisionCode));
             // triples.addTriple(kodwilNS + divisionCode, owlNS + 'sameAs', uri);
 
             var parenthesesMatch = districtName.match(/(.+)\s\((.+)\)/),
