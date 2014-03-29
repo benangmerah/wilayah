@@ -9,7 +9,7 @@ var rdfNS = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#';
 var rdfsNS = 'http://www.w3.org/2000/01/rdf-schema#';
 var owlNS = 'http://www.w3.org/2002/07/owl#';
 var ontNS = 'http://benangmerah.net/ontology/';
-var placeNS = 'http://benangmerah.net/place/';
+var placeNS = 'http://benangmerah.net/place/idn/';
 var kodwilNS = 'urn:kode-wilayah-indonesia:';
 
 var inputCSV = './datasources/permendagri-18-2013/buku-induk.tabula-processed.csv';
