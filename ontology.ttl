@@ -1,14 +1,16 @@
-@prefix : <http://sw.benangmerah.net/ontology/idn-adm-div/> .
+@prefix : <http://benangmerah.net/ontology/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://sw.benangmerah.net/ontology/idn-adm-div/> .
+@base <http://benangmerah.net/ontology/> .
 
-<http://sw.benangmerah.net/ontology/idn-adm-div/> rdf:type owl:Ontology ;
-                                                  
-                                                  rdfs:label "BenangMerah Indonesian Administrative Divisions Ontology" .
+<http://benangmerah.net/ontology/> rdf:type owl:Ontology ;
+                                   
+                                   rdfs:comment "Indonesian Administrative Divisions Ontology" ;
+                                   
+                                   owl:priorVersion <http://sw.benangmerah.net/ontology/idn-adm-div/> .
 
 
 #################################################################
@@ -18,26 +20,43 @@
 #################################################################
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/hasChild
+###  http://benangmerah.net/ontology/contains
+
+:contains rdf:type owl:ObjectProperty ,
+                   owl:TransitiveProperty .
+
+
+
+###  http://benangmerah.net/ontology/hasChild
 
 :hasChild rdf:type owl:ObjectProperty ;
+          
+          rdfs:subPropertyOf :contains ;
           
           owl:inverseOf :hasParent .
 
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/hasParent
+###  http://benangmerah.net/ontology/hasLocationIn
+
+:hasLocationIn rdf:type owl:ObjectProperty ;
+               
+               rdfs:subPropertyOf :isInside .
+
+
+
+###  http://benangmerah.net/ontology/hasParent
 
 :hasParent rdf:type owl:ObjectProperty ;
            
-           rdfs:subPropertyOf :inside .
+           rdfs:subPropertyOf :isInside .
 
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/inside
+###  http://benangmerah.net/ontology/isInside
 
-:inside rdf:type owl:ObjectProperty ,
-                 owl:TransitiveProperty .
+:isInside rdf:type owl:ObjectProperty ,
+                   owl:TransitiveProperty .
 
 
 
@@ -50,13 +69,13 @@
 #################################################################
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/hasGovernmentCode
+###  http://benangmerah.net/ontology/hasGovernmentCode
 
 :hasGovernmentCode rdf:type owl:DatatypeProperty .
 
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/hasPostCode
+###  http://benangmerah.net/ontology/hasPostCode
 
 :hasPostCode rdf:type owl:DatatypeProperty .
 
@@ -71,13 +90,15 @@
 #################################################################
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/AdministrativeDivision
+###  http://benangmerah.net/ontology/AdministrativeDivision
 
-:AdministrativeDivision rdf:type owl:Class .
+:AdministrativeDivision rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :Place .
 
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/Desa
+###  http://benangmerah.net/ontology/Desa
 
 :Desa rdf:type owl:Class ;
       
@@ -88,7 +109,7 @@
 
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/Distrik
+###  http://benangmerah.net/ontology/Distrik
 
 :Distrik rdf:type owl:Class ;
          
@@ -100,7 +121,7 @@
 
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/FirstOrderAdministrativeDivision
+###  http://benangmerah.net/ontology/FirstOrderAdministrativeDivision
 
 :FirstOrderAdministrativeDivision rdf:type owl:Class ;
                                   
@@ -108,7 +129,7 @@
 
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/FourthOrderAdministrativeDivision
+###  http://benangmerah.net/ontology/FourthOrderAdministrativeDivision
 
 :FourthOrderAdministrativeDivision rdf:type owl:Class ;
                                    
@@ -116,7 +137,7 @@
 
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/IndonesianAdministrativeDivision
+###  http://benangmerah.net/ontology/IndonesianAdministrativeDivision
 
 :IndonesianAdministrativeDivision rdf:type owl:Class ;
                                   
@@ -124,7 +145,7 @@
 
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/Kabupaten
+###  http://benangmerah.net/ontology/Kabupaten
 
 :Kabupaten rdf:type owl:Class ;
            
@@ -136,17 +157,17 @@
 
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/KabupatenAdministratif
+###  http://benangmerah.net/ontology/KabupatenAdministrasi
 
-:KabupatenAdministratif rdf:type owl:Class ;
-                        
-                        rdfs:label "Kabupaten Administratif"@id ;
-                        
-                        rdfs:subClassOf :Kabupaten .
+:KabupatenAdministrasi rdf:type owl:Class ;
+                       
+                       rdfs:label "Kabupaten Administratif"@id ;
+                       
+                       rdfs:subClassOf :Kabupaten .
 
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/Kecamatan
+###  http://benangmerah.net/ontology/Kecamatan
 
 :Kecamatan rdf:type owl:Class ;
            
@@ -158,7 +179,15 @@
 
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/Kota
+###  http://benangmerah.net/ontology/Kelurahan
+
+:Kelurahan rdf:type owl:Class ;
+           
+           rdfs:subClassOf :FourthOrderAdministrativeDivision .
+
+
+
+###  http://benangmerah.net/ontology/Kota
 
 :Kota rdf:type owl:Class ;
       
@@ -170,17 +199,31 @@
 
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/KotaAdministratif
+###  http://benangmerah.net/ontology/KotaAdministrasi
 
-:KotaAdministratif rdf:type owl:Class ;
-                   
-                   rdfs:label "Kota Administratif"@id ;
-                   
-                   rdfs:subClassOf :Kota .
+:KotaAdministrasi rdf:type owl:Class ;
+                  
+                  rdfs:label "Kota Administratif"@id ;
+                  
+                  rdfs:subClassOf :Kota .
 
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/Provinsi
+###  http://benangmerah.net/ontology/Place
+
+:Place rdf:type owl:Class .
+
+
+
+###  http://benangmerah.net/ontology/PostCode
+
+:PostCode rdf:type owl:Class ;
+          
+          rdfs:subClassOf :Place .
+
+
+
+###  http://benangmerah.net/ontology/Provinsi
 
 :Provinsi rdf:type owl:Class ;
           
@@ -192,13 +235,15 @@
 
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/PseudoAdministrativeDivision
+###  http://benangmerah.net/ontology/PseudoAdministrativeDivision
 
-:PseudoAdministrativeDivision rdf:type owl:Class .
+:PseudoAdministrativeDivision rdf:type owl:Class ;
+                              
+                              rdfs:subClassOf :Place .
 
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/SecondOrderAdministrativeDivision
+###  http://benangmerah.net/ontology/SecondOrderAdministrativeDivision
 
 :SecondOrderAdministrativeDivision rdf:type owl:Class ;
                                    
@@ -206,7 +251,7 @@
 
 
 
-###  http://sw.benangmerah.net/ontology/idn-adm-div/ThirdOrderAdministrativeDivision
+###  http://benangmerah.net/ontology/ThirdOrderAdministrativeDivision
 
 :ThirdOrderAdministrativeDivision rdf:type owl:Class ;
                                   
