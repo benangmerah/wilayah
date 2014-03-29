@@ -4,13 +4,13 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://benangmerah.net/ontology/> .
+@base <http://benangmerah.net/ontology/WilayahOnt> .
 
-<http://benangmerah.net/ontology/> rdf:type owl:Ontology ;
-                                   
-                                   rdfs:comment "Indonesian Administrative Divisions Ontology" ;
-                                   
-                                   owl:priorVersion <http://sw.benangmerah.net/ontology/idn-adm-div/> .
+<http://benangmerah.net/ontology/WilayahOnt> rdf:type owl:Ontology ;
+                                             
+                                             rdfs:comment "Indonesian Administrative Divisions Ontology" ;
+                                             
+                                             owl:priorVersion <http://sw.benangmerah.net/ontology/idn-adm-div/> .
 
 
 #################################################################
@@ -31,6 +31,12 @@
 
 :hasChild rdf:type owl:ObjectProperty ;
           
+          rdfs:comment "Indicates that {object} is a child of {subject} in the hierarchy of administrative divisions." ;
+          
+          rdfs:domain :AdministrativeDivision ;
+          
+          rdfs:range :AdministrativeDivision ;
+          
           rdfs:subPropertyOf :contains ;
           
           owl:inverseOf :hasParent .
@@ -41,13 +47,27 @@
 
 :hasLocationIn rdf:type owl:ObjectProperty ;
                
-               rdfs:subPropertyOf :isInside .
+               rdfs:comment "Indicates that {subject} has a physical location in the place identified by {object}." ;
+               
+               rdfs:range :Place ;
+               
+               rdfs:subPropertyOf :isInside ;
+               
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:complementOf :Place
+                           ] .
 
 
 
 ###  http://benangmerah.net/ontology/hasParent
 
 :hasParent rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "Indicates that {object} is the parent of {subject} in the hierarchy of administrative divisions." ;
+           
+           rdfs:range :AdministrativeDivision ;
+           
+           rdfs:domain :AdministrativeDivision ;
            
            rdfs:subPropertyOf :isInside .
 
@@ -94,7 +114,9 @@
 
 :AdministrativeDivision rdf:type owl:Class ;
                         
-                        rdfs:subClassOf :Place .
+                        rdfs:subClassOf :Place ;
+                        
+                        rdfs:comment "An administrative division of a country, or of another administrative division." .
 
 
 
@@ -102,7 +124,7 @@
 
 :Desa rdf:type owl:Class ;
       
-      rdfs:label "Desa"@id ;
+      rdfs:label "Desa" ;
       
       rdfs:subClassOf :FourthOrderAdministrativeDivision ,
                       :IndonesianAdministrativeDivision .
@@ -113,8 +135,7 @@
 
 :Distrik rdf:type owl:Class ;
          
-         rdfs:label "District"@en ,
-                    "Distrik"@id ;
+         rdfs:label "Distrik" ;
          
          rdfs:subClassOf :IndonesianAdministrativeDivision ,
                          :ThirdOrderAdministrativeDivision .
@@ -149,8 +170,7 @@
 
 :Kabupaten rdf:type owl:Class ;
            
-           rdfs:label "Regency"@en ,
-                      "Kabupaten"@id ;
+           rdfs:label "Kabupaten" ;
            
            rdfs:subClassOf :IndonesianAdministrativeDivision ,
                            :SecondOrderAdministrativeDivision .
@@ -161,7 +181,7 @@
 
 :KabupatenAdministrasi rdf:type owl:Class ;
                        
-                       rdfs:label "Kabupaten Administratif"@id ;
+                       rdfs:label "Kabupaten Administratif" ;
                        
                        rdfs:subClassOf :Kabupaten .
 
@@ -171,8 +191,7 @@
 
 :Kecamatan rdf:type owl:Class ;
            
-           rdfs:label "District"@en ,
-                      "Kecamatan"@id ;
+           rdfs:label "Kecamatan" ;
            
            rdfs:subClassOf :IndonesianAdministrativeDivision ,
                            :ThirdOrderAdministrativeDivision .
@@ -183,6 +202,8 @@
 
 :Kelurahan rdf:type owl:Class ;
            
+           rdfs:label "Kelurahan" ;
+           
            rdfs:subClassOf :FourthOrderAdministrativeDivision .
 
 
@@ -191,8 +212,7 @@
 
 :Kota rdf:type owl:Class ;
       
-      rdfs:label "City"@en ,
-                 "Kota"@id ;
+      rdfs:label "Kota" ;
       
       rdfs:subClassOf :IndonesianAdministrativeDivision ,
                       :SecondOrderAdministrativeDivision .
@@ -203,7 +223,7 @@
 
 :KotaAdministrasi rdf:type owl:Class ;
                   
-                  rdfs:label "Kota Administratif"@id ;
+                  rdfs:label "Kota Administrasi" ;
                   
                   rdfs:subClassOf :Kota .
 
@@ -215,11 +235,13 @@
 
 
 
-###  http://benangmerah.net/ontology/PostCode
+###  http://benangmerah.net/ontology/PostCodeArea
 
-:PostCode rdf:type owl:Class ;
-          
-          rdfs:subClassOf :Place .
+:PostCodeArea rdf:type owl:Class ;
+              
+              rdfs:subClassOf :Place ;
+              
+              rdfs:comment "An area spanning places which share the same postcode." .
 
 
 
@@ -227,8 +249,7 @@
 
 :Provinsi rdf:type owl:Class ;
           
-          rdfs:label "Province"@en ,
-                     "Provinsi"@id ;
+          rdfs:label "Provinsi" ;
           
           rdfs:subClassOf :FirstOrderAdministrativeDivision ,
                           :IndonesianAdministrativeDivision .
@@ -239,7 +260,9 @@
 
 :PseudoAdministrativeDivision rdf:type owl:Class ;
                               
-                              rdfs:subClassOf :Place .
+                              rdfs:subClassOf :Place ;
+                              
+                              rdfs:comment "A place which indicates an area spanning multiple administrative divisions, without being part of the official hierarchy of administrative divisions." .
 
 
 
@@ -256,6 +279,44 @@
 :ThirdOrderAdministrativeDivision rdf:type owl:Class ;
                                   
                                   rdfs:subClassOf :AdministrativeDivision .
+
+
+
+###  http://benangmerah.net/ontology/WilayahOnt/Country
+
+<http://benangmerah.net/ontology/WilayahOnt/Country> rdf:type owl:Class ;
+                                                     
+                                                     rdfs:subClassOf :Place ;
+                                                     
+                                                     rdfs:comment "A country." .
+
+
+
+
+
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :FirstOrderAdministrativeDivision
+                :FourthOrderAdministrativeDivision
+                :SecondOrderAdministrativeDivision
+                :ThirdOrderAdministrativeDivision
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Desa
+                :Distrik
+                :Kabupaten
+                :Kecamatan
+                :Kota
+                :Provinsi
+              )
+] .
 
 
 
