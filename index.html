@@ -28,17 +28,29 @@
         </ul>
       </header>
       <section>
-        <p>This repository holds an OWL ontology and knowledge base that attempts to reflect the official, current administrative division structure in Indonesia. The current approach being taken is to fetch data from Kemdagri's (the Indonesian Interior Ministry) master reference and build an ontology model based on that. There will also be mappings to other ontologies, such as GeoNames, schema.org, etc. The OWL files are stored in the Turtle syntax.</p>
+        <p>Having a common vocabulary for identifying places in Indonesia is essential for synergising development efforts across multiple stakeholders. However, at present, different organizations refer to the same places by different names. Additionally, existing efforts to identify places in Indonesia, such as those identified by GeoNames, are generally incomplete and may not reflect the actual structure of administrative divisions in Indonesia. Thankfully, through the use of Linked Data, it is possible to align these disparate representations using predicates like <code>owl:sameAs</code>.</p>
+
+<p>This repository aims to create a reference for identifying administrative divisions in Indonesia for use in Linked Data applications, such as BenangMerah. To create such a reference, four things are needed:</p>
+
+<ol>
+<li>An ontology to define the semantics of Indonesian administrative divisions</li>
+<li>A script to generate an RDF graph from external sources, using vocabulary from the ontology</li>
+<li>The resulting RDF graph</li>
+<li>A script for mapping concepts between this ontology and other ontologies/linked data sources</li>
+<li>A mappings RDF graph</li>
+</ol><p>Currently the first 3 points have been developed and are present in this repository. For the external data sources, the current approach being taken is to fetch data from Kemdagri's (the Indonesian Interior Ministry) master reference.</p>
 
 <h2>
 <a name="ontology" class="anchor" href="#ontology"><span class="octicon octicon-link"></span></a>Ontology</h2>
 
-<p>The OWL ontology (Tbox) is available in Turtle format <a href="https://raw.githubusercontent.com/benangmerah/wilayah/master/ontology.ttl">from the repository</a>. At present, the ontology describes the four levels of administrative divisions in Indonesia: Provinsi, Kabupaten/Kota, Kecamatan/Distrik, and Desa/Kelurahan and the parent/child relationships between them.</p>
+<p>A custom (i.e., not directly based on any other ontology) OWL ontology (Tbox) is used to describe the concepts needed to describe administrative divisions in Indonesia. OWL classes are used represent the classes of administrative divisions: Provinsi, Kabupaten, Kota, Kecamatan, Distrik, Desa, Kelurahan, etc. OWL object properties are used to denote the parent-child relationships in the hierarchy of administrative divisions.</p>
+
+<p>At the moment, the ontology is available in Turtle format <a href="https://raw.githubusercontent.com/benangmerah/wilayah/master/ontology.ttl">from this repository</a>. However, in the future, the BenangMerah ontology will be split off into a different repo. The URIs used will stay the same.</p>
 
 <h2>
-<a name="knowledge-base" class="anchor" href="#knowledge-base"><span class="octicon octicon-link"></span></a>Knowledge base</h2>
+<a name="how-it-works" class="anchor" href="#how-it-works"><span class="octicon octicon-link"></span></a>How it works</h2>
 
-<p>The OWL knowledge base (Abox) is generated using a custom node.js script from a CSV extracted using <a href="http://tabula.nerdpower.org/">Tabula</a> from the PDF of <a href="http://www.kemendagri.go.id/pages/data-wilayah">Buku Induk Kode dan Wilayah Administrasi Pemerintahan Per Provinsi, Kabupaten/Kota dan Kecamatan Seluruh Indonesia</a>, which was legalised as <em>Lampiran I Permendagri No. 18/2013</em>, with several mistruncated words corrected based on information on the document itself, as well as abbreviations expanded.</p>
+<p>The instances RDF graph (Abox) is generated using a custom node.js script from a CSV extracted using <a href="http://tabula.nerdpower.org/">Tabula</a> from the PDF of <a href="http://www.kemendagri.go.id/pages/data-wilayah">Buku Induk Kode dan Wilayah Administrasi Pemerintahan Per Provinsi, Kabupaten/Kota dan Kecamatan Seluruh Indonesia</a>, which was legalised as <em>Lampiran I Permendagri No. 18/2013</em>, with several mistruncated words corrected based on information on the document itself, as well as abbreviations expanded.</p>
 
 <p>Note that the Permendagri does not include recent establishments of new divisions, such as the province of Kalimantan Utara and many kabupatens around Indonesia. Nonetheless, this knowledgebase uses the Permendagri as its basis. Other possible sources, such as <a href="http://kodepos.nomor.net/">http://kodepos.nomor.net/</a>, will be incorporated in the future.</p>
 
@@ -67,7 +79,7 @@
 
 <p>Each resource is <code>rdfs:label</code>-ed by its name according to the Permendagri.</p>
 
-<p>The OWL ontology (schema, if you may) is available in Turtle format <a href="https://raw.githubusercontent.com/benangmerah/idn-adm-div-ont/master/instances.ttl">from the repository</a>.</p>
+<p>The instances RDF graph is available in Turtle format <a href="https://raw.githubusercontent.com/benangmerah/idn-adm-div-ont/master/instances.ttl">from the repository</a>.</p>
 
 <h1>
 <a name="about-benangmerah" class="anchor" href="#about-benangmerah"><span class="octicon octicon-link"></span></a>About BenangMerah</h1>
