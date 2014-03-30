@@ -2,15 +2,15 @@
 
 Having a common vocabulary for identifying places in Indonesia is essential for synergising development efforts across multiple stakeholders. However, at present, different organizations refer to the same places by different names. Additionally, existing efforts to identify places in Indonesia, such as those identified by GeoNames, are generally incomplete and may not reflect the actual structure of administrative divisions in Indonesia. Thankfully, through the use of Linked Data, it is possible to align these disparate representations using predicates like `owl:sameAs`.
 
-This repository aims to create a reference for identifying administrative divisions in Indonesia for use in Linked Data applications, such as BenangMerah. To create such a reference, four things are needed:
+This repository aims to create a reference for identifying administrative divisions in Indonesia for use in Linked Data applications, such as BenangMerah. BenangMerah uses this data to link places in Indonesia with statistics about the places as well as social projects and organizations active in those places.
 
-1. An ontology to define the semantics of Indonesian administrative divisions
-2. A script to generate an RDF graph from external sources, using vocabulary from the ontology
-3. The resulting RDF graph
-4. A script for mapping concepts between this ontology and other ontologies/linked data sources
-5. A mappings RDF graph
+The contents of this repository are as follows:
 
-Currently the first 3 points have been developed and are present in this repository. For the external data sources, the current approach being taken is to fetch data from Kemdagri's (the Indonesian Interior Ministry) master reference.
+1. A script to generate RDF triples from reference documents, using node.js.
+2. Reference documents to generate the triples from.
+3. The resulting RDF triples, in Turtle format.
+
+Additionally, a set of URI conventions are used to identify the Indonesian administrative divisions referenced in the triples. They are described in this readme.
 
 ## Ontology
 
@@ -24,7 +24,10 @@ The instances RDF graph (Abox) is generated using a custom node.js script from a
 
 Note that the Permendagri does not include recent establishments of new divisions, such as the province of Kalimantan Utara and many kabupatens around Indonesia. Nonetheless, this knowledgebase uses the Permendagri as its basis. Other possible sources, such as <http://kodepos.nomor.net/>, will be incorporated in the future.
 
-The knowledge base assigns URIs to each administrative division in the following format:
+## URIs
+
+URIs are used to identify Linked Data resources, in this case the Indonesian administrative divisions. Since they follow a hierarchy, much like files and directories in a filesystem, a similar way of addressing is used. The base URI pattern is as follows:
+
 ```
 http://benangmerah.net/place/idn/[provinsi]/[kabupaten-kota]/[kecamatan]
 ```
@@ -33,17 +36,24 @@ Where:
 * `provinsi` is the `slugified-name` of the province, according to the Permendagri. Note that:
   * Daerah Istimewa Yogyakarta, referred as Daista Yogyakarta in the Permendagri, is written as `daerah-istimewa-yogyakarta`, not `daista-yogyakarta`, `yogyakarta`, nor `diy`.
   * DKI Jakarta, on the other hand, is written as `dki-jakarta`, not `daerah-khusus-ibukota-jakarta`, `jakarta`, nor `dki`.
-  * Aceh is written as `aceh`, as it is its official name according to UU No. 11/2006
+  * Aceh is written as `aceh`, as it is its official name according to UU No. 11/2006.
 * `kabupaten-kota` is the `slugified-name` of the kabupaten/kota, _including_ the word `kabupaten` or `kota`. The abbreviation Kab. in the Permendagri is expanded. Note that the subdivisions of DKI Jakarta are officially termed "Kota Administratif" and "Kabupaten Administratif".
 * `kecamatan` is the `slugified-name` of the kecamatan/distrik, _not including_ the word `kecamatan` nor `distrik`.
 
-At the moment, the `slugified-name` form of place names are generated using [underscore.string](https://github.com/epeli/underscore.string).
+The `slugified-name` form of place names are generated using the `slugify` function of [underscore.string](https://github.com/epeli/underscore.string).
+
+These URI conventions can be compared to other ontologies/resources:
+* GeoNames which uses codes for places, appended to the base GeoNames URI.
+* DBPedia uses Wikipedia titles.
+
+## The instances graph
 
 Each resource is `rdfs:label`-ed by its name according to the Permendagri.
 
-The instances RDF graph is available in Turtle format [from the repository](https://raw.githubusercontent.com/benangmerah/idn-adm-div-ont/master/instances.ttl).
+The instances RDF graph is available in Turtle format [from this repository](https://raw.githubusercontent.com/benangmerah/wilayah/master/instances.ttl).
 
 # About BenangMerah
-BenangMerah is a project to connect information on social development in Indonesia into a knowledge base using Semantic Web technologies.
+
+BenangMerah is an effort to collect data on social development in Indonesia into a knowledge base based on Semantic Web/Linked Data technologies.
 
 BenangMerah is developed by Andhika Nugraha, a student at Institut Teknologi Bandung.
