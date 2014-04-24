@@ -25,12 +25,12 @@ var prefixes = {
 }
 
 // Location of the Permendagri CSV as our main datasource
-var permendagriCSV = './datasources/permendagri-18-2013/buku-induk.tabula-processed.csv';
+var permendagriCSV = __dirname + '/datasources/permendagri-18-2013/buku-induk.tabula-processed.csv';
 
 // Use the BPS-provided dataset for latitude/longitude information
 // Aside from lat-long, the dataset isn't accurate as there are many human errors
 // Source: http://data.ukp.go.id/dataset/daftar-nama-daerah/
-var bpsCSV = './datasources/daftar-nama-daerah.csv';
+var bpsCSV = __dirname + '/datasources/daftar-nama-daerah.csv';
 
 var nameReplace = {
   '\\s+': ' ',
