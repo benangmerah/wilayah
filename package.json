@@ -1,8 +1,13 @@
 {
+  "name": "benangmerah-wilayah",
+  "version": "0.2",
+  "main": "./main.js",
   "private": true,
   "dependencies": {
     "underscore.string": "~2.3.3",
     "csv": "~0.3.7",
-    "n3": "~0.2.5"
+    "n3": "~0.2.5",
+    "winston": "~0.7.3",
+    "minimist": "0.0.8"
   }
 }

@@ -13,8 +13,16 @@ var placeNS = 'http://benangmerah.net/place/idn/';
 var kodwilNS = 'urn:kode-wilayah-indonesia:';
 var bpsNS = 'http://benangmerah.net/place/idn/bps/';
 
+var prefixes = {
+  'rdf': rdfNS,
+  'rdfs': rdfsNS,
+  'owl': owlNS,
+  'wil': kodwilNS,
+  'bps': bpsNS,
+  '': ontNS
+}
+
 var inputCSV = './datasources/permendagri-18-2013/buku-induk.tabula-processed.csv';
-var outputTurtle = './instances.ttl';
 
 var nameReplace = {
   '\\s+': ' ',
@@ -84,197 +92,246 @@ function bpsURI(divisionCode) {
   return bpsNS + divisionCode.replace(/\./g, '');
 }
 
-csv()
-  .from.path(inputCSV)
-  .to.array(function(rows) {
-    var currentProvince = '';
-    var currentFactualProvince = ''; // Including Kalimantan Utara
-    var currentRegency = '';
-    var currentDistrict = '';
+function parse(callback, triples) {
+  csv()
+    .from.path(inputCSV)
+    .to.array(function(rows) {
+      var currentProvince = '';
+      var currentFactualProvince = ''; // Including Kalimantan Utara
+      var currentRegency = '';
+      var currentDistrict = '';
 
-    var addedKalimantanUtara = false;
+      var addedKalimantanUtara = false;
 
-    var triples = n3.Writer({
-      'rdf': rdfNS,
-      'rdfs': rdfsNS,
-      'owl': owlNS,
-      'wil': kodwilNS,
-      'bps': bpsNS,
-      '': ontNS
-    });
+      rows.forEach(function(row) {
+        while (row[0].trim() == '') {
+          row.shift();
+        }
+        row.forEach(function(value, key) {
+          row[key] = value.trim();
+          if (spaced = row[key].match(/([a-zA-Z]\s){2,}([a-zA-Z])/)) {
+            var spacedWord = spaced[0];
+            row[key] = row[key].replace(spacedWord, spacedWord.replace(/ /g, ''));
+          }
+        });
 
-    rows.forEach(function(row) {
-      while (row[0].trim() == '') {
-        row.shift();
-      }
-      row.forEach(function(value, key) {
-        row[key] = value.trim();
-        if (spaced = row[key].match(/([a-zA-Z]\s){2,}([a-zA-Z])/)) {
-          var spacedWord = spaced[0];
-          row[key] = row[key].replace(spacedWord, spacedWord.replace(/ /g, ''));
+        if (row.length > 1) {
+          // This row is a valid district.
+
+          if (row.length >= 3) {
+            // A province
+            var divisionCode = row[1].trim();
+            var provinceName = sanitizeName(row[2], true);
+
+            currentProvince = provinceName;
+            currentFactualProvince = currentProvince;
+
+            var uri = placeURI(provinceName);
+            triples.addTriple(uri, rdfNS + 'type', ontNS + 'Provinsi');
+            triples.addTriple(uri, rdfsNS + 'label', lit(provinceName));
+            triples.addTriple(uri, rdfsNS + 'label', lit(provinceName) + '@id');
+            triples.addTriple(uri, ontNS + 'hasGovernmentCode', lit(divisionCode));
+
+            // Add OWL equivalence for URI referring to BPS code
+            triples.addTriple(uri, owlNS + 'sameAs', bpsURI(divisionCode));
+            // triples.addTriple(kodwilNS + divisionCode, owlNS + 'sameAs', uri);
+
+            if (/Yogyakarta$/.test(provinceName)) {
+              triples.addTriple(uri, rdfsNS + 'label', '"Daerah Istimewa Yogyakarta"');
+              triples.addTriple(uri, rdfsNS + 'label', '"Daista Yogyakarta"');
+              triples.addTriple(uri, rdfsNS + 'label', '"DIY"');
+              // triples.addTriple(placeURI('Yogyakarta'), owlNS + 'sameAs', uri);
+              // triples.addTriple(placeURI('Daista Yogyakarta'), owlNS + 'sameAs', uri);
+              // triples.addTriple(placeURI('DIY'), owlNS + 'sameAs', uri);
+            }
+            else if (/Jakarta$/.test(provinceName)) {
+              triples.addTriple(uri, rdfsNS + 'label', '"Jakarta"');
+              triples.addTriple(uri, rdfsNS + 'label', '"DKI"');
+              // triples.addTriple(placeURI('Jakarta'), owlNS + 'sameAs', uri);
+              // triples.addTriple(placeURI('DKI'), owlNS + 'sameAs', uri);
+            }
+          }
+
+          else if (row.length >= 2) {
+            var divisionCode = row[0];
+
+            if (divisionCode.length == 5) {
+              // A kota/kabupaten
+              var regencyName = sanitizeName(row[1], true);
+
+              currentRegency = regencyName;
+
+              if (currentProvince == 'Kalimantan Timur' &&
+                  subdivisionsOfKalimantanUtara.indexOf(regencyName) != -1) {
+                // Since Kalimantan Utara is not registered in the Permendagri,
+                // Handle Kalimantan Utara separately.
+
+                currentFactualProvince = 'Kalimantan Utara';
+
+                if (!addedKalimantanUtara) {
+                  var kalimantanUtaraUri = placeURI('Kalimantan Utara');
+                  triples.addTriple(kalimantanUtaraUri, rdfNS + 'type', ontNS + 'Provinsi');
+                  triples.addTriple(kalimantanUtaraUri, rdfsNS + 'label', '"Kalimantan Utara"');
+                  triples.addTriple(kalimantanUtaraUri, rdfsNS + 'label', '"Kalimantan Utara"@id');
+                  addedKalimantanUtara = true;
+                }
+              }
+              else if (currentProvince != currentFactualProvince) {
+                currentFactualProvince = currentProvince;
+              }
+
+              var provinceURI = placeURI(currentFactualProvince);
+              var uri = placeURI(currentFactualProvince, regencyName);
+
+              var type = 'Kabupaten';
+              var shortLabel = 'Kab. ';
+              if (regencyName.match(/^Kabupaten Administrasi/)) {
+                type = 'KabupatenAdministrasi';
+                shortLabel = 'Kab. Adm. ';
+              }
+              else if (regencyName.match(/^Kota Administrasi/)) {
+                type = 'KotaAdministrasi';
+                shortLabel = 'Kota Adm. ';
+              }
+              else if (regencyName.match(/^Kota/)) {
+                type = 'Kota';
+                shortLabel = 'Kota ';
+              }
+
+              var labelMatch = regencyName.match(/^(?:Kabupaten|Kota)(?: Administrasi)? (.+)/);
+              var label = labelMatch[1];
+              shortLabel += label;
+
+              triples.addTriple(uri, rdfNS + 'type', ontNS + type);
+              triples.addTriple(uri, rdfsNS + 'label', lit(regencyName));
+              triples.addTriple(uri, rdfsNS + 'label', lit(label));
+              triples.addTriple(uri, rdfsNS + 'label', lit(shortLabel));
+              triples.addTriple(uri, rdfsNS + 'label', lit(regencyName) + '@id');
+              triples.addTriple(uri, rdfsNS + 'label', lit(label) + '@id');
+              triples.addTriple(uri, rdfsNS + 'label', lit(shortLabel) + '@id');
+              triples.addTriple(uri, ontNS + 'hasParent', provinceURI);
+              triples.addTriple(uri, ontNS + 'hasGovernmentCode', lit(divisionCode));
+
+              // Add OWL equivalence for URI referring to BPS code
+              triples.addTriple(uri, owlNS + 'sameAs', bpsURI(divisionCode));
+              // triples.addTriple(kodwilNS + divisionCode, owlNS + 'sameAs', uri);
+            }
+            else {
+              // A kecamatan
+              var districtName = sanitizeName(row[1]);
+
+              if (currentProvince == 'Kalimantan Timur' &&
+                  subdivisionsOfKalimantanUtara.indexOf(currentRegency) != -1) {
+                // Since Kalimantan Utara is not registered in the Permendagri,
+                // Handle Kalimantan Utara separately.
+
+                currentFactualProvince = 'Kalimantan Utara';
+              }
+              else if (currentProvince != currentFactualProvince) {
+                currentFactualProvince = currentProvince;
+              }
+
+              // Process according to the available district name
+              var regencyURI = placeURI(currentFactualProvince, currentRegency);
+              var uri = placeURI(currentFactualProvince, currentRegency, districtName);
+
+              // 'Kecamatan' in Papua and Papua Barat is called 'Distrik'
+              var type = /^Papua/.test(currentFactualProvince) ? 'Distrik' : 'Kecamatan';
+
+              triples.addTriple(uri, rdfNS + 'type', ontNS + type);
+              triples.addTriple(uri, rdfsNS + 'label', lit(districtName));
+              triples.addTriple(uri, rdfsNS + 'label', lit(type + ' ' + districtName));
+              triples.addTriple(uri, rdfsNS + 'label', lit(districtName) + '@id');
+              triples.addTriple(uri, rdfsNS + 'label', lit(type + ' ' + districtName) + '@id');
+              triples.addTriple(uri, ontNS + 'hasParent', regencyURI);
+              triples.addTriple(uri, ontNS + 'hasGovernmentCode', lit(divisionCode));
+
+              // Add OWL equivalence for URI referring to BPS code
+              triples.addTriple(uri, owlNS + 'sameAs', bpsURI(divisionCode));
+              // triples.addTriple(kodwilNS + divisionCode, owlNS + 'sameAs', uri);
+
+              var parenthesesMatch = districtName.match(/(.+)\s\((.+)\)/),
+                  slashMatch = districtName.match(/(.+)\s?\/\s?(.+)/);
+
+              if (parenthesesMatch || slashMatch) {
+                if (parenthesesMatch) {
+                  alt1 = parenthesesMatch[1];
+                  alt2 = parenthesesMatch[2];
+                }
+                else if (slashMatch) {
+                  alt1 = slashMatch[1];
+                  alt2 = slashMatch[2];
+                }
+
+                altUri1 = placeURI(currentFactualProvince, currentRegency, alt1);
+                altUri2 = placeURI(currentFactualProvince, currentRegency, alt2);
+                triples.addTriple(altUri1, owlNS + 'sameAs', uri);
+                triples.addTriple(altUri2, owlNS + 'sameAs', uri);
+              }
+            }
+          }
         }
       });
 
-      if (row.length > 1) {
-        // This row is a valid district.
+      callback(null, triples);
+    })
+}
 
-        if (row.length >= 3) {
-          // A province
-          var divisionCode = row[1].trim();
-          var provinceName = sanitizeName(row[2], true);
+exports.getTripleStore = function getTripleStore(callback) {
+  var tripleStore = n3.Store(null, prefixes);
 
-          currentProvince = provinceName;
-          currentFactualProvince = currentProvince;
+  parse(function flushTriples(err, resultingTriples) {
+    if (err) {
+      callback(err);
+    }
+    else {
+      callback(null, resultingTriples);
+    }
+  }, tripleStore);
+}
 
-          var uri = placeURI(provinceName);
-          triples.addTriple(uri, rdfNS + 'type', ontNS + 'Provinsi');
-          triples.addTriple(uri, rdfsNS + 'label', lit(provinceName));
-          triples.addTriple(uri, rdfsNS + 'label', lit(provinceName) + '@id');
-          triples.addTriple(uri, ontNS + 'hasGovernmentCode', lit(divisionCode));
+exports.writeTriples = function writeTriples(outputTurtle, callback) {
+  var tripleWriter = n3.Writer(prefixes);
 
-          // Add OWL equivalence for URI referring to BPS code
-          triples.addTriple(uri, owlNS + 'sameAs', bpsURI(divisionCode));
-          // triples.addTriple(kodwilNS + divisionCode, owlNS + 'sameAs', uri);
-
-          if (/Yogyakarta$/.test(provinceName)) {
-            triples.addTriple(uri, rdfsNS + 'label', '"Daerah Istimewa Yogyakarta"');
-            triples.addTriple(uri, rdfsNS + 'label', '"Daista Yogyakarta"');
-            triples.addTriple(uri, rdfsNS + 'label', '"DIY"');
-            // triples.addTriple(placeURI('Yogyakarta'), owlNS + 'sameAs', uri);
-            // triples.addTriple(placeURI('Daista Yogyakarta'), owlNS + 'sameAs', uri);
-            // triples.addTriple(placeURI('DIY'), owlNS + 'sameAs', uri);
-          }
-          else if (/Jakarta$/.test(provinceName)) {
-            triples.addTriple(uri, rdfsNS + 'label', '"Jakarta"');
-            triples.addTriple(uri, rdfsNS + 'label', '"DKI"');
-            // triples.addTriple(placeURI('Jakarta'), owlNS + 'sameAs', uri);
-            // triples.addTriple(placeURI('DKI'), owlNS + 'sameAs', uri);
-          }
-        }
-
-        else if (row.length >= 2) {
-          var divisionCode = row[0];
-
-          if (divisionCode.length == 5) {
-            // A kota/kabupaten
-            var regencyName = sanitizeName(row[1], true);
-
-            currentRegency = regencyName;
-
-            if (currentProvince == 'Kalimantan Timur' &&
-                subdivisionsOfKalimantanUtara.indexOf(regencyName) != -1) {
-              // Since Kalimantan Utara is not registered in the Permendagri,
-              // Handle Kalimantan Utara separately.
-
-              currentFactualProvince = 'Kalimantan Utara';
-
-              if (!addedKalimantanUtara) {
-                var kalimantanUtaraUri = placeURI('Kalimantan Utara');
-                triples.addTriple(kalimantanUtaraUri, rdfNS + 'type', ontNS + 'Provinsi');
-                triples.addTriple(kalimantanUtaraUri, rdfsNS + 'label', '"Kalimantan Utara"');
-                triples.addTriple(kalimantanUtaraUri, rdfsNS + 'label', '"Kalimantan Utara"@id');
-                addedKalimantanUtara = true;
-              }
-            }
-            else if (currentProvince != currentFactualProvince) {
-              currentFactualProvince = currentProvince;
-            }
-
-            var provinceURI = placeURI(currentFactualProvince);
-            var uri = placeURI(currentFactualProvince, regencyName);
-
-            var type = 'Kabupaten';
-            var shortLabel = 'Kab. ';
-            if (regencyName.match(/^Kabupaten Administrasi/)) {
-              type = 'KabupatenAdministrasi';
-              shortLabel = 'Kab. Adm. ';
-            }
-            else if (regencyName.match(/^Kota Administrasi/)) {
-              type = 'KotaAdministrasi';
-              shortLabel = 'Kota Adm. ';
-            }
-            else if (regencyName.match(/^Kota/)) {
-              type = 'Kota';
-              shortLabel = 'Kota ';
-            }
-
-            var labelMatch = regencyName.match(/^(?:Kabupaten|Kota)(?: Administrasi)? (.+)/);
-            var label = labelMatch[1];
-            shortLabel += label;
-
-            triples.addTriple(uri, rdfNS + 'type', ontNS + type);
-            triples.addTriple(uri, rdfsNS + 'label', lit(regencyName));
-            triples.addTriple(uri, rdfsNS + 'label', lit(label));
-            triples.addTriple(uri, rdfsNS + 'label', lit(shortLabel));
-            triples.addTriple(uri, rdfsNS + 'label', lit(regencyName) + '@id');
-            triples.addTriple(uri, rdfsNS + 'label', lit(label) + '@id');
-            triples.addTriple(uri, rdfsNS + 'label', lit(shortLabel) + '@id');
-            triples.addTriple(uri, ontNS + 'hasParent', provinceURI);
-            triples.addTriple(uri, ontNS + 'hasGovernmentCode', lit(divisionCode));
-
-            // Add OWL equivalence for URI referring to BPS code
-            triples.addTriple(uri, owlNS + 'sameAs', bpsURI(divisionCode));
-            // triples.addTriple(kodwilNS + divisionCode, owlNS + 'sameAs', uri);
-          }
-          else {
-            // A kecamatan
-            var districtName = sanitizeName(row[1]);
-
-            if (currentProvince == 'Kalimantan Timur' &&
-                subdivisionsOfKalimantanUtara.indexOf(currentRegency) != -1) {
-              // Since Kalimantan Utara is not registered in the Permendagri,
-              // Handle Kalimantan Utara separately.
-
-              currentFactualProvince = 'Kalimantan Utara';
-            }
-            else if (currentProvince != currentFactualProvince) {
-              currentFactualProvince = currentProvince;
-            }
-
-            // Process according to the available district name
-            var regencyURI = placeURI(currentFactualProvince, currentRegency);
-            var uri = placeURI(currentFactualProvince, currentRegency, districtName);
-
-            // 'Kecamatan' in Papua and Papua Barat is called 'Distrik'
-            var type = /^Papua/.test(currentFactualProvince) ? 'Distrik' : 'Kecamatan';
-
-            triples.addTriple(uri, rdfNS + 'type', ontNS + type);
-            triples.addTriple(uri, rdfsNS + 'label', lit(districtName));
-            triples.addTriple(uri, rdfsNS + 'label', lit(type + ' ' + districtName));
-            triples.addTriple(uri, rdfsNS + 'label', lit(districtName) + '@id');
-            triples.addTriple(uri, rdfsNS + 'label', lit(type + ' ' + districtName) + '@id');
-            triples.addTriple(uri, ontNS + 'hasParent', regencyURI);
-            triples.addTriple(uri, ontNS + 'hasGovernmentCode', lit(divisionCode));
-
-            // Add OWL equivalence for URI referring to BPS code
-            triples.addTriple(uri, owlNS + 'sameAs', bpsURI(divisionCode));
-            // triples.addTriple(kodwilNS + divisionCode, owlNS + 'sameAs', uri);
-
-            var parenthesesMatch = districtName.match(/(.+)\s\((.+)\)/),
-                slashMatch = districtName.match(/(.+)\s?\/\s?(.+)/);
-
-            if (parenthesesMatch || slashMatch) {
-              if (parenthesesMatch) {
-                alt1 = parenthesesMatch[1];
-                alt2 = parenthesesMatch[2];
-              }
-              else if (slashMatch) {
-                alt1 = slashMatch[1];
-                alt2 = slashMatch[2];
-              }
-
-              altUri1 = placeURI(currentFactualProvince, currentRegency, alt1);
-              altUri2 = placeURI(currentFactualProvince, currentRegency, alt2);
-              triples.addTriple(altUri1, owlNS + 'sameAs', uri);
-              triples.addTriple(altUri2, owlNS + 'sameAs', uri);
-            }
-          }
-        }
+  parse(function flushTriples(err, resultingTriples) {
+    resultingTriples.end(function(err, result) {
+      if (!err) {
+        fs.writeFile(outputTurtle, result, callback);
+      }
+      else {
+        callback(err);
       }
     });
+  }, tripleWriter);
+}
 
-    triples.end(function(err, result) {
-      if (!err)
-        fs.writeFileSync(outputTurtle, result);
-    })
+/*
+getTripleStore(function(err, tripleStore) {
+  var triples = tripleStore.find(null, null, null);
+  for (var i = 0; i < 20; ++i) {
+    console.log(triples[i]);
+  }
+});
+*/
+
+if (require.main === module) {
+  var logger = require('winston');
+  var minimist = require('minimist');
+
+  var outputTurtle = './instances.ttl';
+  var argv = minimist(process.argv.slice(2));
+  if (argv.o) {
+    outputTurtle = argv.o;
+  }
+
+  logger.info('Turtle output will be written to ' + outputTurtle + '.');
+  logger.info('Loading CSV...');
+  exports.writeTriples(outputTurtle, function(err) {
+    if (err) {
+      logger.error(err);
+    }
+    else {
+      logger.info('Turtle output successfully written to ' + outputTurtle + '.');
+    }
   })
+}
