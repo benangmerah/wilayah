@@ -80,8 +80,8 @@ function lit(value) {
   return '"' + value + '"';
 }
 
-function bpsCode(divisionCode) {
-  return divisionCode.replace(/\./g, '');
+function bpsURI(divisionCode) {
+  return bpsNS + divisionCode.replace(/\./g, '');
 }
 
 csv()
@@ -99,6 +99,7 @@ csv()
       'rdfs': rdfsNS,
       'owl': owlNS,
       'wil': kodwilNS,
+      'bps': bpsNS,
       '': ontNS
     });
 
@@ -130,6 +131,9 @@ csv()
           triples.addTriple(uri, rdfsNS + 'label', lit(provinceName));
           triples.addTriple(uri, rdfsNS + 'label', lit(provinceName) + '@id');
           triples.addTriple(uri, ontNS + 'hasGovernmentCode', lit(divisionCode));
+
+          // Add OWL equivalence for URI referring to BPS code
+          triples.addTriple(uri, owlNS + 'sameAs', bpsURI(divisionCode));
           // triples.addTriple(kodwilNS + divisionCode, owlNS + 'sameAs', uri);
 
           if (/Yogyakarta$/.test(provinceName)) {
@@ -207,6 +211,9 @@ csv()
             triples.addTriple(uri, rdfsNS + 'label', lit(shortLabel) + '@id');
             triples.addTriple(uri, ontNS + 'hasParent', provinceURI);
             triples.addTriple(uri, ontNS + 'hasGovernmentCode', lit(divisionCode));
+
+            // Add OWL equivalence for URI referring to BPS code
+            triples.addTriple(uri, owlNS + 'sameAs', bpsURI(divisionCode));
             // triples.addTriple(kodwilNS + divisionCode, owlNS + 'sameAs', uri);
           }
           else {
@@ -238,6 +245,9 @@ csv()
             triples.addTriple(uri, rdfsNS + 'label', lit(type + ' ' + districtName) + '@id');
             triples.addTriple(uri, ontNS + 'hasParent', regencyURI);
             triples.addTriple(uri, ontNS + 'hasGovernmentCode', lit(divisionCode));
+
+            // Add OWL equivalence for URI referring to BPS code
+            triples.addTriple(uri, owlNS + 'sameAs', bpsURI(divisionCode));
             // triples.addTriple(kodwilNS + divisionCode, owlNS + 'sameAs', uri);
 
             var parenthesesMatch = districtName.match(/(.+)\s\((.+)\)/),
