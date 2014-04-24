@@ -26,7 +26,21 @@ Note that the Permendagri does not include recent establishments of new division
 
 ## URIs
 
-URIs are used to identify Linked Data resources, in this case the Indonesian administrative divisions. Since they follow a hierarchy, much like files and directories in a filesystem, a similar way of addressing is used. The base URI pattern is as follows:
+URIs are used to identify Linked Data resources, in this case the Indonesian administrative divisions. Each division is referred by 2 URIs, with the equivalence of the URIs asserted using `owl:sameAs`.
+
+### BPS Code URIs (preferred)
+
+The Indonesian government maintains numeric codes for administrative divisions. These numeric codes are reused by other governmental bodies, including their datasets. As such, using these URIs are more preferred for linking government-sourced datasets. The URI pattern is as follows:
+
+```
+http://benangmerah.net/place/idn/bps/[bps-code]
+```
+
+`bps-code` refers to the BPS code, which is a two-digit (for provinces), four-digit (for kabupaten/kota), or six-digit (for kecamatan) number.
+
+### Hierarchical URIs
+
+Since administrative divisions follow a hierarchy, much like files and directories in a filesystem, a similar way of addressing is used. The base URI pattern is as follows:
 
 ```
 http://benangmerah.net/place/idn/[provinsi]/[kabupaten-kota]/[kecamatan]
