@@ -1,8 +1,8 @@
-var fs = require('fs'),
-    csv = require('csv'),
-    _s = require('underscore.string'),
-    n3 = require('n3'),
-    util = require('util');
+var fs = require('fs');
+var csv = require('csv');
+var _s = require('underscore.string');
+var n3 = require('n3');
+var util = require('util');
 
 // Namespaces
 var rdfNS = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#';
@@ -12,6 +12,7 @@ var ontNS = 'http://benangmerah.net/ontology/';
 var placeNS = 'http://benangmerah.net/place/idn/';
 var kodwilNS = 'urn:kode-wilayah-indonesia:';
 var bpsNS = 'http://benangmerah.net/place/idn/bps/';
+var geoNS = 'http://www.w3.org/2003/01/geo/wgs84_pos#';
 
 var prefixes = {
   'rdf': rdfNS,
@@ -19,10 +20,17 @@ var prefixes = {
   'owl': owlNS,
   'wil': kodwilNS,
   'bps': bpsNS,
+  'geo': geoNS,
   '': ontNS
 }
 
-var inputCSV = './datasources/permendagri-18-2013/buku-induk.tabula-processed.csv';
+// Location of the Permendagri CSV as our main datasource
+var permendagriCSV = './datasources/permendagri-18-2013/buku-induk.tabula-processed.csv';
+
+// Use the BPS-provided dataset for latitude/longitude information
+// Aside from lat-long, the dataset isn't accurate as there are many human errors
+// Source: http://data.ukp.go.id/dataset/daftar-nama-daerah/
+var bpsCSV = './datasources/daftar-nama-daerah.csv';
 
 var nameReplace = {
   '\\s+': ' ',
@@ -82,9 +90,34 @@ function bpsURI(divisionCode) {
   return bpsNS + divisionCode.replace(/\./g, '');
 }
 
-function parse(callback, triples) {
+// Parse BPS dataset for lat-long
+function parseBPS(callback) {
+
+  // Associative array of lat-longs
+  // The key is the BPS code of the place
+  var latLongs = {};
   csv()
-    .from.path(inputCSV)
+    .from.path(bpsCSV)
+    .to.array(function(rows) {
+        rows.forEach(function(row) {
+          var bpsCode = parseInt(row[3]);
+          if (bpsCode > 0 && (bpsCode < 100 || bpsCode > 999)) {
+            bpsCode = '' + bpsCode;
+            latLongs[bpsCode] = {
+              latitude: row[5],
+              longitude: row[6]
+            };
+          }
+        });
+
+        callback(latLongs);
+      });
+}
+
+// Parse Permendagri dataset for everything else
+function parsePermendagri(triples, latLongs, callback) {
+  csv()
+    .from.path(permendagriCSV)
     .to.array(function(rows) {
       var currentProvince = '';
       var currentRegency = '';
@@ -226,6 +259,13 @@ function parse(callback, triples) {
               }
             }
           }
+
+          var bpsCode = divisionCode.replace(/\./g, '');
+          var pos = latLongs[bpsCode];
+          if (pos) {
+            triples.addTriple(uri, geoNS + 'lat', lit(pos.latitude));
+            triples.addTriple(uri, geoNS + 'long', lit(pos.longitude));
+          }
         }
       });
 
@@ -233,23 +273,29 @@ function parse(callback, triples) {
     })
 }
 
+function parse(triples, callback) {
+  parseBPS(function(latLongs) {
+    parsePermendagri(triples, latLongs, callback);
+  });
+}
+
 exports.getTripleStore = function getTripleStore(callback) {
   var tripleStore = n3.Store(null, prefixes);
 
-  parse(function flushTriples(err, resultingTriples) {
+  parse(tripleStore, function flushTriples(err, resultingTriples) {
     if (err) {
       callback(err);
     }
     else {
       callback(null, resultingTriples);
     }
-  }, tripleStore);
+  });
 }
 
 exports.writeTriples = function writeTriples(outputTurtle, callback) {
   var tripleWriter = n3.Writer(prefixes);
 
-  parse(function flushTriples(err, resultingTriples) {
+  parse(tripleWriter, function flushTriples(err, resultingTriples) {
     resultingTriples.end(function(err, result) {
       if (!err) {
         fs.writeFile(outputTurtle, result, callback);
@@ -258,17 +304,8 @@ exports.writeTriples = function writeTriples(outputTurtle, callback) {
         callback(err);
       }
     });
-  }, tripleWriter);
+  });
 }
-
-/*
-getTripleStore(function(err, tripleStore) {
-  var triples = tripleStore.find(null, null, null);
-  for (var i = 0; i < 20; ++i) {
-    console.log(triples[i]);
-  }
-});
-*/
 
 if (require.main === module) {
   var logger = require('winston');
