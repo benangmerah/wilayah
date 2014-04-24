@@ -40,16 +40,6 @@ var nameReplace = {
   'Bolaang Mongondow Se$': 'Bolaang Mongondow Selatan'
 };
 
-// Kalimantan Utara isn't properly indexed in the Permendagri,
-// so list the subdivisions here for special treatment
-var subdivisionsOfKalimantanUtara = [
-  'Kota Tarakan',
-  'Kabupaten Bulungan',
-  'Kabupaten Malinau',
-  'Kabupaten Nunukan',
-  'Kabupaten Tana Tidung'
-];
-
 function sanitizeName(name, titleize) {
   var output = name;
 
@@ -97,11 +87,8 @@ function parse(callback, triples) {
     .from.path(inputCSV)
     .to.array(function(rows) {
       var currentProvince = '';
-      var currentFactualProvince = ''; // Including Kalimantan Utara
       var currentRegency = '';
       var currentDistrict = '';
-
-      var addedKalimantanUtara = false;
 
       rows.forEach(function(row) {
         while (row[0].trim() == '') {
@@ -124,7 +111,6 @@ function parse(callback, triples) {
             var provinceName = sanitizeName(row[2], true);
 
             currentProvince = provinceName;
-            currentFactualProvince = currentProvince;
 
             var uri = placeURI(provinceName);
             triples.addTriple(uri, rdfNS + 'type', ontNS + 'Provinsi');
@@ -161,27 +147,8 @@ function parse(callback, triples) {
 
               currentRegency = regencyName;
 
-              if (currentProvince == 'Kalimantan Timur' &&
-                  subdivisionsOfKalimantanUtara.indexOf(regencyName) != -1) {
-                // Since Kalimantan Utara is not registered in the Permendagri,
-                // Handle Kalimantan Utara separately.
-
-                currentFactualProvince = 'Kalimantan Utara';
-
-                if (!addedKalimantanUtara) {
-                  var kalimantanUtaraUri = placeURI('Kalimantan Utara');
-                  triples.addTriple(kalimantanUtaraUri, rdfNS + 'type', ontNS + 'Provinsi');
-                  triples.addTriple(kalimantanUtaraUri, rdfsNS + 'label', '"Kalimantan Utara"');
-                  triples.addTriple(kalimantanUtaraUri, rdfsNS + 'label', '"Kalimantan Utara"@id');
-                  addedKalimantanUtara = true;
-                }
-              }
-              else if (currentProvince != currentFactualProvince) {
-                currentFactualProvince = currentProvince;
-              }
-
-              var provinceURI = placeURI(currentFactualProvince);
-              var uri = placeURI(currentFactualProvince, regencyName);
+              var provinceURI = placeURI(currentProvince);
+              var uri = placeURI(currentProvince, regencyName);
 
               var type = 'Kabupaten';
               var shortLabel = 'Kab. ';
@@ -220,23 +187,12 @@ function parse(callback, triples) {
               // A kecamatan
               var districtName = sanitizeName(row[1]);
 
-              if (currentProvince == 'Kalimantan Timur' &&
-                  subdivisionsOfKalimantanUtara.indexOf(currentRegency) != -1) {
-                // Since Kalimantan Utara is not registered in the Permendagri,
-                // Handle Kalimantan Utara separately.
-
-                currentFactualProvince = 'Kalimantan Utara';
-              }
-              else if (currentProvince != currentFactualProvince) {
-                currentFactualProvince = currentProvince;
-              }
-
               // Process according to the available district name
-              var regencyURI = placeURI(currentFactualProvince, currentRegency);
-              var uri = placeURI(currentFactualProvince, currentRegency, districtName);
+              var regencyURI = placeURI(currentProvince, currentRegency);
+              var uri = placeURI(currentProvince, currentRegency, districtName);
 
               // 'Kecamatan' in Papua and Papua Barat is called 'Distrik'
-              var type = /^Papua/.test(currentFactualProvince) ? 'Distrik' : 'Kecamatan';
+              var type = /^Papua/.test(currentProvince) ? 'Distrik' : 'Kecamatan';
 
               triples.addTriple(uri, rdfNS + 'type', ontNS + type);
               triples.addTriple(uri, rdfsNS + 'label', lit(districtName));
@@ -263,8 +219,8 @@ function parse(callback, triples) {
                   alt2 = slashMatch[2];
                 }
 
-                altUri1 = placeURI(currentFactualProvince, currentRegency, alt1);
-                altUri2 = placeURI(currentFactualProvince, currentRegency, alt2);
+                altUri1 = placeURI(currentProvince, currentRegency, alt1);
+                altUri2 = placeURI(currentProvince, currentRegency, alt2);
                 triples.addTriple(altUri1, owlNS + 'sameAs', uri);
                 triples.addTriple(altUri2, owlNS + 'sameAs', uri);
               }

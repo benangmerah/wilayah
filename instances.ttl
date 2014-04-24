@@ -26955,221 +26955,219 @@
     :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-berau>;
     :hasGovernmentCode "64.03.13";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640313>.
-<http://benangmerah.net/place/idn/kalimantan-utara> a :Provinsi;
-    rdfs:label "Kalimantan Utara", "Kalimantan Utara"@id.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan> a :Kabupaten;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan> a :Kabupaten;
     rdfs:label "Kabupaten Bulungan", "Bulungan", "Kab. Bulungan", "Kabupaten Bulungan"@id, "Bulungan"@id, "Kab. Bulungan"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur>;
     :hasGovernmentCode "64.04";
     owl:sameAs <http://benangmerah.net/place/idn/bps/6404>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan/tanjung-palas> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan/tanjung-palas> a :Kecamatan;
     rdfs:label "Tanjung Palas", "Kecamatan Tanjung Palas", "Tanjung Palas"@id, "Kecamatan Tanjung Palas"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan>;
     :hasGovernmentCode "64.04.01";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640401>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan/tanjung-palas-barat> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan/tanjung-palas-barat> a :Kecamatan;
     rdfs:label "Tanjung Palas Barat", "Kecamatan Tanjung Palas Barat", "Tanjung Palas Barat"@id, "Kecamatan Tanjung Palas Barat"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan>;
     :hasGovernmentCode "64.04.02";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640402>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan/tanjung-palas-utara> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan/tanjung-palas-utara> a :Kecamatan;
     rdfs:label "Tanjung Palas Utara", "Kecamatan Tanjung Palas Utara", "Tanjung Palas Utara"@id, "Kecamatan Tanjung Palas Utara"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan>;
     :hasGovernmentCode "64.04.03";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640403>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan/tanjung-palas-timur> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan/tanjung-palas-timur> a :Kecamatan;
     rdfs:label "Tanjung Palas Timur", "Kecamatan Tanjung Palas Timur", "Tanjung Palas Timur"@id, "Kecamatan Tanjung Palas Timur"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan>;
     :hasGovernmentCode "64.04.04";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640404>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan/tanjung-selor> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan/tanjung-selor> a :Kecamatan;
     rdfs:label "Tanjung Selor", "Kecamatan Tanjung Selor", "Tanjung Selor"@id, "Kecamatan Tanjung Selor"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan>;
     :hasGovernmentCode "64.04.05";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640405>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan/tanjung-palas-tengah> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan/tanjung-palas-tengah> a :Kecamatan;
     rdfs:label "Tanjung Palas Tengah", "Kecamatan Tanjung Palas Tengah", "Tanjung Palas Tengah"@id, "Kecamatan Tanjung Palas Tengah"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan>;
     :hasGovernmentCode "64.04.06";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640406>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan/peso> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan/peso> a :Kecamatan;
     rdfs:label "Peso", "Kecamatan Peso", "Peso"@id, "Kecamatan Peso"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan>;
     :hasGovernmentCode "64.04.07";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640407>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan/peso-ilir> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan/peso-ilir> a :Kecamatan;
     rdfs:label "Peso Ilir", "Kecamatan Peso Ilir", "Peso Ilir"@id, "Kecamatan Peso Ilir"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan>;
     :hasGovernmentCode "64.04.08";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640408>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan/sekatak> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan/sekatak> a :Kecamatan;
     rdfs:label "Sekatak", "Kecamatan Sekatak", "Sekatak"@id, "Kecamatan Sekatak"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan>;
     :hasGovernmentCode "64.04.09";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640409>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan/bunyu> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan/bunyu> a :Kecamatan;
     rdfs:label "Bunyu", "Kecamatan Bunyu", "Bunyu"@id, "Kecamatan Bunyu"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-bulungan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-bulungan>;
     :hasGovernmentCode "64.04.12";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640412>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan> a :Kabupaten;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan> a :Kabupaten;
     rdfs:label "Kabupaten Nunukan", "Nunukan", "Kab. Nunukan", "Kabupaten Nunukan"@id, "Nunukan"@id, "Kab. Nunukan"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur>;
     :hasGovernmentCode "64.05";
     owl:sameAs <http://benangmerah.net/place/idn/bps/6405>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan/sebatik> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan/sebatik> a :Kecamatan;
     rdfs:label "Sebatik", "Kecamatan Sebatik", "Sebatik"@id, "Kecamatan Sebatik"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan>;
     :hasGovernmentCode "64.05.01";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640501>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan/nunukan> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan/nunukan> a :Kecamatan;
     rdfs:label "Nunukan", "Kecamatan Nunukan", "Nunukan"@id, "Kecamatan Nunukan"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan>;
     :hasGovernmentCode "64.05.02";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640502>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan/sembakung> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan/sembakung> a :Kecamatan;
     rdfs:label "Sembakung", "Kecamatan Sembakung", "Sembakung"@id, "Kecamatan Sembakung"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan>;
     :hasGovernmentCode "64.05.03";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640503>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan/lumbis> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan/lumbis> a :Kecamatan;
     rdfs:label "Lumbis", "Kecamatan Lumbis", "Lumbis"@id, "Kecamatan Lumbis"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan>;
     :hasGovernmentCode "64.05.04";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640504>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan/krayan> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan/krayan> a :Kecamatan;
     rdfs:label "Krayan", "Kecamatan Krayan", "Krayan"@id, "Kecamatan Krayan"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan>;
     :hasGovernmentCode "64.05.05";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640505>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan/sebuku> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan/sebuku> a :Kecamatan;
     rdfs:label "Sebuku", "Kecamatan Sebuku", "Sebuku"@id, "Kecamatan Sebuku"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan>;
     :hasGovernmentCode "64.05.06";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640506>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan/krayan-selatan> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan/krayan-selatan> a :Kecamatan;
     rdfs:label "Krayan Selatan", "Kecamatan Krayan Selatan", "Krayan Selatan"@id, "Kecamatan Krayan Selatan"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan>;
     :hasGovernmentCode "64.05.07";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640507>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan/sebatik-barat> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan/sebatik-barat> a :Kecamatan;
     rdfs:label "Sebatik Barat", "Kecamatan Sebatik Barat", "Sebatik Barat"@id, "Kecamatan Sebatik Barat"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan>;
     :hasGovernmentCode "64.05.08";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640508>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan/nunukan-selatan> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan/nunukan-selatan> a :Kecamatan;
     rdfs:label "Nunukan Selatan", "Kecamatan Nunukan Selatan", "Nunukan Selatan"@id, "Kecamatan Nunukan Selatan"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan>;
     :hasGovernmentCode "64.05.09";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640509>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan/sebatik-timur> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan/sebatik-timur> a :Kecamatan;
     rdfs:label "Sebatik Timur", "Kecamatan Sebatik Timur", "Sebatik Timur"@id, "Kecamatan Sebatik Timur"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan>;
     :hasGovernmentCode "64.05.10";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640510>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan/sebatik-utara> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan/sebatik-utara> a :Kecamatan;
     rdfs:label "Sebatik Utara", "Kecamatan Sebatik Utara", "Sebatik Utara"@id, "Kecamatan Sebatik Utara"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan>;
     :hasGovernmentCode "64.05.11";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640511>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan/sebatik-tengah> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan/sebatik-tengah> a :Kecamatan;
     rdfs:label "Sebatik Tengah", "Kecamatan Sebatik Tengah", "Sebatik Tengah"@id, "Kecamatan Sebatik Tengah"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan>;
     :hasGovernmentCode "64.05.12";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640512>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan/sei-menggaris> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan/sei-menggaris> a :Kecamatan;
     rdfs:label "Sei Menggaris", "Kecamatan Sei Menggaris", "Sei Menggaris"@id, "Kecamatan Sei Menggaris"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan>;
     :hasGovernmentCode "64.05.13";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640513>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan/tulin-onsoi> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan/tulin-onsoi> a :Kecamatan;
     rdfs:label "Tulin Onsoi", "Kecamatan Tulin Onsoi", "Tulin Onsoi"@id, "Kecamatan Tulin Onsoi"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan>;
     :hasGovernmentCode "64.05.14";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640514>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan/lumbis-ogong> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan/lumbis-ogong> a :Kecamatan;
     rdfs:label "Lumbis Ogong", "Kecamatan Lumbis Ogong", "Lumbis Ogong"@id, "Kecamatan Lumbis Ogong"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-nunukan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-nunukan>;
     :hasGovernmentCode "64.05.15";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640515>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau> a :Kabupaten;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau> a :Kabupaten;
     rdfs:label "Kabupaten Malinau", "Malinau", "Kab. Malinau", "Kabupaten Malinau"@id, "Malinau"@id, "Kab. Malinau"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur>;
     :hasGovernmentCode "64.06";
     owl:sameAs <http://benangmerah.net/place/idn/bps/6406>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau/mentarang> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau/mentarang> a :Kecamatan;
     rdfs:label "Mentarang", "Kecamatan Mentarang", "Mentarang"@id, "Kecamatan Mentarang"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau>;
     :hasGovernmentCode "64.06.01";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640601>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau/malinau-kota> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau/malinau-kota> a :Kecamatan;
     rdfs:label "Malinau Kota", "Kecamatan Malinau Kota", "Malinau Kota"@id, "Kecamatan Malinau Kota"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau>;
     :hasGovernmentCode "64.06.02";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640602>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau/pujungan> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau/pujungan> a :Kecamatan;
     rdfs:label "Pujungan", "Kecamatan Pujungan", "Pujungan"@id, "Kecamatan Pujungan"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau>;
     :hasGovernmentCode "64.06.03";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640603>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau/kayan-hilir> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau/kayan-hilir> a :Kecamatan;
     rdfs:label "Kayan Hilir", "Kecamatan Kayan Hilir", "Kayan Hilir"@id, "Kecamatan Kayan Hilir"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau>;
     :hasGovernmentCode "64.06.04";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640604>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau/kayan-hulu> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau/kayan-hulu> a :Kecamatan;
     rdfs:label "Kayan Hulu", "Kecamatan Kayan Hulu", "Kayan Hulu"@id, "Kecamatan Kayan Hulu"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau>;
     :hasGovernmentCode "64.06.05";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640605>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau/malinau-selatan> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau/malinau-selatan> a :Kecamatan;
     rdfs:label "Malinau Selatan", "Kecamatan Malinau Selatan", "Malinau Selatan"@id, "Kecamatan Malinau Selatan"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau>;
     :hasGovernmentCode "64.06.06";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640606>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau/malinau-utara> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau/malinau-utara> a :Kecamatan;
     rdfs:label "Malinau Utara", "Kecamatan Malinau Utara", "Malinau Utara"@id, "Kecamatan Malinau Utara"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau>;
     :hasGovernmentCode "64.06.07";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640607>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau/malinau-barat> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau/malinau-barat> a :Kecamatan;
     rdfs:label "Malinau Barat", "Kecamatan Malinau Barat", "Malinau Barat"@id, "Kecamatan Malinau Barat"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau>;
     :hasGovernmentCode "64.06.08";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640608>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau/sungai-boh> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau/sungai-boh> a :Kecamatan;
     rdfs:label "Sungai Boh", "Kecamatan Sungai Boh", "Sungai Boh"@id, "Kecamatan Sungai Boh"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau>;
     :hasGovernmentCode "64.06.09";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640609>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau/kayan-selatan> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau/kayan-selatan> a :Kecamatan;
     rdfs:label "Kayan Selatan", "Kecamatan Kayan Selatan", "Kayan Selatan"@id, "Kecamatan Kayan Selatan"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau>;
     :hasGovernmentCode "64.06.10";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640610>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau/bahau-hulu> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau/bahau-hulu> a :Kecamatan;
     rdfs:label "Bahau Hulu", "Kecamatan Bahau Hulu", "Bahau Hulu"@id, "Kecamatan Bahau Hulu"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau>;
     :hasGovernmentCode "64.06.11";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640611>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau/mentarang-hulu> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau/mentarang-hulu> a :Kecamatan;
     rdfs:label "Mentarang Hulu", "Kecamatan Mentarang Hulu", "Mentarang Hulu"@id, "Kecamatan Mentarang Hulu"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau>;
     :hasGovernmentCode "64.06.12";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640612>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau/malinau-selatan-hilir> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau/malinau-selatan-hilir> a :Kecamatan;
     rdfs:label "Malinau Selatan Hilir", "Kecamatan Malinau Selatan Hilir", "Malinau Selatan Hilir"@id, "Kecamatan Malinau Selatan Hilir"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau>;
     :hasGovernmentCode "64.06.13";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640613>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau/malinau-selatan-hulu> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau/malinau-selatan-hulu> a :Kecamatan;
     rdfs:label "Malinau Selatan Hulu", "Kecamatan Malinau Selatan Hulu", "Malinau Selatan Hulu"@id, "Kecamatan Malinau Selatan Hulu"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau>;
     :hasGovernmentCode "64.06.14";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640614>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau/sungai-tubu> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau/sungai-tubu> a :Kecamatan;
     rdfs:label "Sungai Tubu", "Kecamatan Sungai Tubu", "Sungai Tubu"@id, "Kecamatan Sungai Tubu"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-malinau>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-malinau>;
     :hasGovernmentCode "64.06.15";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640615>.
 <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-kutai-barat> a :Kabupaten;
@@ -27402,29 +27400,29 @@
     :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-penajam-paser-utara>;
     :hasGovernmentCode "64.09.04";
     owl:sameAs <http://benangmerah.net/place/idn/bps/640904>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-tana-tidung> a :Kabupaten;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-tana-tidung> a :Kabupaten;
     rdfs:label "Kabupaten Tana Tidung", "Tana Tidung", "Kab. Tana Tidung", "Kabupaten Tana Tidung"@id, "Tana Tidung"@id, "Kab. Tana Tidung"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur>;
     :hasGovernmentCode "64.10";
     owl:sameAs <http://benangmerah.net/place/idn/bps/6410>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-tana-tidung/sesayap> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-tana-tidung/sesayap> a :Kecamatan;
     rdfs:label "Sesayap", "Kecamatan Sesayap", "Sesayap"@id, "Kecamatan Sesayap"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-tana-tidung>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-tana-tidung>;
     :hasGovernmentCode "64.10.01";
     owl:sameAs <http://benangmerah.net/place/idn/bps/641001>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-tana-tidung/sesayap-hilir> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-tana-tidung/sesayap-hilir> a :Kecamatan;
     rdfs:label "Sesayap Hilir", "Kecamatan Sesayap Hilir", "Sesayap Hilir"@id, "Kecamatan Sesayap Hilir"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-tana-tidung>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-tana-tidung>;
     :hasGovernmentCode "64.10.02";
     owl:sameAs <http://benangmerah.net/place/idn/bps/641002>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-tana-tidung/tana-lia> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-tana-tidung/tana-lia> a :Kecamatan;
     rdfs:label "Tana Lia", "Kecamatan Tana Lia", "Tana Lia"@id, "Kecamatan Tana Lia"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-tana-tidung>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-tana-tidung>;
     :hasGovernmentCode "64.10.03";
     owl:sameAs <http://benangmerah.net/place/idn/bps/641003>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-tana-tidung/betayau> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-tana-tidung/betayau> a :Kecamatan;
     rdfs:label "Betayau", "Kecamatan Betayau", "Betayau"@id, "Kecamatan Betayau"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kabupaten-tana-tidung>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kabupaten-tana-tidung>;
     :hasGovernmentCode "64.10.04";
     owl:sameAs <http://benangmerah.net/place/idn/bps/641004>.
 <http://benangmerah.net/place/idn/kalimantan-timur/kota-balikpapan> a :Kota;
@@ -27517,29 +27515,29 @@
     :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kota-samarinda>;
     :hasGovernmentCode "64.72.10";
     owl:sameAs <http://benangmerah.net/place/idn/bps/647210>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kota-tarakan> a :Kota;
+<http://benangmerah.net/place/idn/kalimantan-timur/kota-tarakan> a :Kota;
     rdfs:label "Kota Tarakan", "Tarakan", "Kota Tarakan", "Kota Tarakan"@id, "Tarakan"@id, "Kota Tarakan"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur>;
     :hasGovernmentCode "64.73";
     owl:sameAs <http://benangmerah.net/place/idn/bps/6473>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kota-tarakan/tarakan-barat> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kota-tarakan/tarakan-barat> a :Kecamatan;
     rdfs:label "Tarakan Barat", "Kecamatan Tarakan Barat", "Tarakan Barat"@id, "Kecamatan Tarakan Barat"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kota-tarakan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kota-tarakan>;
     :hasGovernmentCode "64.73.01";
     owl:sameAs <http://benangmerah.net/place/idn/bps/647301>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kota-tarakan/tarakan-tengah> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kota-tarakan/tarakan-tengah> a :Kecamatan;
     rdfs:label "Tarakan Tengah", "Kecamatan Tarakan Tengah", "Tarakan Tengah"@id, "Kecamatan Tarakan Tengah"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kota-tarakan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kota-tarakan>;
     :hasGovernmentCode "64.73.02";
     owl:sameAs <http://benangmerah.net/place/idn/bps/647302>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kota-tarakan/tarakan-timur> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kota-tarakan/tarakan-timur> a :Kecamatan;
     rdfs:label "Tarakan Timur", "Kecamatan Tarakan Timur", "Tarakan Timur"@id, "Kecamatan Tarakan Timur"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kota-tarakan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kota-tarakan>;
     :hasGovernmentCode "64.73.03";
     owl:sameAs <http://benangmerah.net/place/idn/bps/647303>.
-<http://benangmerah.net/place/idn/kalimantan-utara/kota-tarakan/tarakan-utara> a :Kecamatan;
+<http://benangmerah.net/place/idn/kalimantan-timur/kota-tarakan/tarakan-utara> a :Kecamatan;
     rdfs:label "Tarakan Utara", "Kecamatan Tarakan Utara", "Tarakan Utara"@id, "Kecamatan Tarakan Utara"@id;
-    :hasParent <http://benangmerah.net/place/idn/kalimantan-utara/kota-tarakan>;
+    :hasParent <http://benangmerah.net/place/idn/kalimantan-timur/kota-tarakan>;
     :hasGovernmentCode "64.73.04";
     owl:sameAs <http://benangmerah.net/place/idn/bps/647304>.
 <http://benangmerah.net/place/idn/kalimantan-timur/kota-bontang> a :Kota;
