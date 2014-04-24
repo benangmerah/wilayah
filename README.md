@@ -52,6 +52,30 @@ Each resource is `rdfs:label`-ed by its name according to the Permendagri.
 
 The instances RDF graph is available in Turtle format [from this repository](https://raw.githubusercontent.com/benangmerah/wilayah/master/instances.ttl).
 
+## The script
+
+As a CLI script:
+
+```
+node main.js [-o turtle_output_file_name]
+```
+
+As a module:
+
+```
+var wilayah = require('benangmerah-wilayah');
+
+wilayah.getTripleStore(function(err, tripleStore) {
+	// tripleStore is an instance of N3Store containing the triples
+});
+
+wilayah.writeTriples('turtle_output_file_name', function(err) {
+	if (!err) {
+		// Turtle succesfully written
+	}
+});
+```
+
 # About BenangMerah
 
 BenangMerah is an effort to collect data on social development in Indonesia into a knowledge base based on Semantic Web/Linked Data technologies.
