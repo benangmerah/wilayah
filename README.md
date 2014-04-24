@@ -34,7 +34,7 @@ http://benangmerah.net/place/idn/[provinsi]/[kabupaten-kota]/[kecamatan]
 
 Where:
 * `provinsi` is the `slugified-name` of the province, according to the Permendagri. Note that:
-  * Daerah Istimewa Yogyakarta, referred as Daista Yogyakarta in the Permendagri, is written as `daerah-istimewa-yogyakarta`, not `daista-yogyakarta`, `yogyakarta`, nor `diy`.
+  * Daerah Istimewa Yogyakarta, referred as Daista Yogyakarta in the Permendagri and DI Yogyakarta by BPS, is written as `di-yogyakarta`, not `daerah-istimewa-yogyakarta`, `daista-yogyakarta`, `yogyakarta`, nor `diy`.
   * DKI Jakarta, on the other hand, is written as `dki-jakarta`, not `daerah-khusus-ibukota-jakarta`, `jakarta`, nor `dki`.
   * Aceh is written as `aceh`, as it is its official name according to UU No. 11/2006.
 * `kabupaten-kota` is the `slugified-name` of the kabupaten/kota, _including_ the word `kabupaten` or `kota`. The abbreviation Kab. in the Permendagri is expanded. Note that the subdivisions of DKI Jakarta are officially termed "Kota Administratif" and "Kabupaten Administratif".

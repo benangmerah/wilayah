@@ -11,6 +11,7 @@ var owlNS = 'http://www.w3.org/2002/07/owl#';
 var ontNS = 'http://benangmerah.net/ontology/';
 var placeNS = 'http://benangmerah.net/place/idn/';
 var kodwilNS = 'urn:kode-wilayah-indonesia:';
+var bpsNS = 'http://benangmerah.net/place/idn/bps/';
 
 var inputCSV = './datasources/permendagri-18-2013/buku-induk.tabula-processed.csv';
 var outputTurtle = './instances.ttl';
@@ -20,7 +21,7 @@ var nameReplace = {
   ' - ': '-',
   '\\s?/\\s?': '/',
   'Kep\\.': 'Kepulauan',
-  '^Daista': 'Daerah Istimewa',
+  '^Daista': 'DI',
   '^DKI': 'DKI',
   '^Kab\\.?': 'Kabupaten',
   'Adm.': 'Administrasi',
@@ -79,6 +80,10 @@ function lit(value) {
   return '"' + value + '"';
 }
 
+function bpsCode(divisionCode) {
+  return divisionCode.replace(/\./g, '');
+}
+
 csv()
   .from.path(inputCSV)
   .to.array(function(rows) {
@@ -128,7 +133,7 @@ csv()
           // triples.addTriple(kodwilNS + divisionCode, owlNS + 'sameAs', uri);
 
           if (/Yogyakarta$/.test(provinceName)) {
-            triples.addTriple(uri, rdfsNS + 'label', '"DI Yogyakarta"');
+            triples.addTriple(uri, rdfsNS + 'label', '"Daerah Istimewa Yogyakarta"');
             triples.addTriple(uri, rdfsNS + 'label', '"Daista Yogyakarta"');
             triples.addTriple(uri, rdfsNS + 'label', '"DIY"');
             // triples.addTriple(placeURI('Yogyakarta'), owlNS + 'sameAs', uri);
