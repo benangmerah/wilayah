@@ -1,28 +1,19 @@
 var fs = require('fs');
+var util = require('util');
 var csv = require('csv');
 var _s = require('underscore.string');
-var n3 = require('n3');
-var util = require('util');
 
-// Namespaces
-var rdfNS = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#';
-var rdfsNS = 'http://www.w3.org/2000/01/rdf-schema#';
-var owlNS = 'http://www.w3.org/2002/07/owl#';
-var ontNS = 'http://benangmerah.net/ontology/';
-var placeNS = 'http://benangmerah.net/place/idn/';
-var kodwilNS = 'urn:kode-wilayah-indonesia:';
-var bpsNS = 'http://benangmerah.net/place/idn/bps/';
-var geoNS = 'http://www.w3.org/2003/01/geo/wgs84_pos#';
+var BmDriverBase = require('benangmerah-driver-base');
 
-var prefixes = {
-  'rdf': rdfNS,
-  'rdfs': rdfsNS,
-  'owl': owlNS,
-  'wil': kodwilNS,
-  'bps': bpsNS,
-  'geo': geoNS,
-  '': ontNS
-}
+var RDF_NS = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#';
+var RDFS_NS = 'http://www.w3.org/2000/01/rdf-schema#';
+var OWL_NS = 'http://www.w3.org/2002/07/owl#';
+var XSD_NS = 'http://www.w3.org/2001/XMLSchema#';
+var BM_NS = 'http://benangmerah.net/ontology/';
+var PLACE_NS = 'http://benangmerah.net/place/idn/';
+var BPS_NS = 'http://benangmerah.net/place/idn/bps/';
+var GEO_NS = 'http://www.w3.org/2003/01/geo/wgs84_pos#';
+var QB_NS = 'http://purl.org/linked-data/cube#';
 
 // Location of the Permendagri CSV as our main datasource
 var permendagriCSV = __dirname + '/datasources/permendagri-18-2013/buku-induk.tabula-processed.csv';
@@ -68,7 +59,7 @@ function sanitizeName(name, titleize) {
 }
 
 function placeURI(province, regency, district, subdistrict) {
-  var uri = placeNS;
+  var uri = PLACE_NS;
 
   if (province)
     uri += _s.slugify(province);
@@ -87,12 +78,18 @@ function lit(value) {
 }
 
 function bpsURI(divisionCode) {
-  return bpsNS + divisionCode.replace(/\./g, '');
+  return BPS_NS + divisionCode.replace(/\./g, '');
 }
 
-// Parse BPS dataset for lat-long
-function parseBPS(callback) {
+function WilayahDriver() {}
 
+util.inherits(WilayahDriver, BmDriverBase);
+
+module.exports = WilayahDriver;
+
+// Parse BPS dataset for lat-long
+WilayahDriver.prototype.parseBPS = function parseBPS(callback) {
+  var self = this;
   // Associative array of lat-longs
   // The key is the BPS code of the place
   var latLongs = {};
@@ -110,12 +107,18 @@ function parseBPS(callback) {
           }
         });
 
-        callback(latLongs);
+        self.latLongs = latLongs;
+
+        callback();
       });
-}
+};
 
 // Parse Permendagri dataset for everything else
-function parsePermendagri(triples, latLongs, callback) {
+WilayahDriver.prototype.parsePermendagri =
+function parsePermendagri(callback) {
+  var self = this;
+  var latLongs = self.latLongs;
+
   csv()
     .from.path(permendagriCSV)
     .to.array(function(rows) {
@@ -124,12 +127,13 @@ function parsePermendagri(triples, latLongs, callback) {
       var currentDistrict = '';
 
       rows.forEach(function(row) {
-        while (row[0].trim() == '') {
+        while (row[0].trim() === '') {
           row.shift();
         }
         row.forEach(function(value, key) {
           row[key] = value.trim();
-          if (spaced = row[key].match(/([a-zA-Z]\s){2,}([a-zA-Z])/)) {
+          var spaced = row[key].match(/([a-zA-Z]\s){2,}([a-zA-Z])/);
+          if (spaced) {
             var spacedWord = spaced[0];
             row[key] = row[key].replace(spacedWord, spacedWord.replace(/ /g, ''));
           }
@@ -137,42 +141,43 @@ function parsePermendagri(triples, latLongs, callback) {
 
         if (row.length > 1) {
           // This row is a valid district.
+          var divisionCode, uri, type;
 
           if (row.length >= 3) {
             // A province
-            var divisionCode = row[1].trim();
+            divisionCode = row[1].trim();
             var provinceName = sanitizeName(row[2], true);
 
             currentProvince = provinceName;
 
-            var uri = placeURI(provinceName);
-            triples.addTriple(uri, rdfNS + 'type', ontNS + 'Provinsi');
-            triples.addTriple(uri, rdfsNS + 'label', lit(provinceName));
-            triples.addTriple(uri, rdfsNS + 'label', lit(provinceName) + '@id');
-            triples.addTriple(uri, ontNS + 'hasGovernmentCode', lit(divisionCode));
+            uri = placeURI(provinceName);
+            self.addTriple(uri, RDF_NS + 'type', BM_NS + 'Provinsi');
+            self.addTriple(uri, RDFS_NS + 'label', lit(provinceName));
+            self.addTriple(uri, RDFS_NS + 'label', lit(provinceName) + '@id');
+            self.addTriple(uri, BM_NS + 'hasGovernmentCode', lit(divisionCode));
 
             // Add OWL equivalence for URI referring to BPS code
-            triples.addTriple(uri, owlNS + 'sameAs', bpsURI(divisionCode));
-            // triples.addTriple(kodwilNS + divisionCode, owlNS + 'sameAs', uri);
+            self.addTriple(uri, OWL_NS + 'sameAs', bpsURI(divisionCode));
+            // self.addTriple(KODWIL_NS + divisionCode, OWL_NS + 'sameAs', uri);
 
             if (/Yogyakarta$/.test(provinceName)) {
-              triples.addTriple(uri, rdfsNS + 'label', '"Daerah Istimewa Yogyakarta"');
-              triples.addTriple(uri, rdfsNS + 'label', '"Daista Yogyakarta"');
-              triples.addTriple(uri, rdfsNS + 'label', '"DIY"');
-              // triples.addTriple(placeURI('Yogyakarta'), owlNS + 'sameAs', uri);
-              // triples.addTriple(placeURI('Daista Yogyakarta'), owlNS + 'sameAs', uri);
-              // triples.addTriple(placeURI('DIY'), owlNS + 'sameAs', uri);
+              self.addTriple(uri, RDFS_NS + 'label', '"Daerah Istimewa Yogyakarta"');
+              self.addTriple(uri, RDFS_NS + 'label', '"Daista Yogyakarta"');
+              self.addTriple(uri, RDFS_NS + 'label', '"DIY"');
+              // self.addTriple(placeURI('Yogyakarta'), OWL_NS + 'sameAs', uri);
+              // self.addTriple(placeURI('Daista Yogyakarta'), OWL_NS + 'sameAs', uri);
+              // self.addTriple(placeURI('DIY'), OWL_NS + 'sameAs', uri);
             }
             else if (/Jakarta$/.test(provinceName)) {
-              triples.addTriple(uri, rdfsNS + 'label', '"Jakarta"');
-              triples.addTriple(uri, rdfsNS + 'label', '"DKI"');
-              // triples.addTriple(placeURI('Jakarta'), owlNS + 'sameAs', uri);
-              // triples.addTriple(placeURI('DKI'), owlNS + 'sameAs', uri);
+              self.addTriple(uri, RDFS_NS + 'label', '"Jakarta"');
+              self.addTriple(uri, RDFS_NS + 'label', '"DKI"');
+              // self.addTriple(placeURI('Jakarta'), OWL_NS + 'sameAs', uri);
+              // self.addTriple(placeURI('DKI'), OWL_NS + 'sameAs', uri);
             }
           }
 
           else if (row.length >= 2) {
-            var divisionCode = row[0];
+            divisionCode = row[0];
 
             if (divisionCode.length == 5) {
               // A kota/kabupaten
@@ -181,9 +186,9 @@ function parsePermendagri(triples, latLongs, callback) {
               currentRegency = regencyName;
 
               var provinceURI = placeURI(currentProvince);
-              var uri = placeURI(currentProvince, regencyName);
+              uri = placeURI(currentProvince, regencyName);
 
-              var type = 'Kabupaten';
+              type = 'Kabupaten';
               var shortLabel = 'Kab. ';
               if (regencyName.match(/^Kabupaten Administrasi/)) {
                 type = 'KabupatenAdministrasi';
@@ -202,19 +207,19 @@ function parsePermendagri(triples, latLongs, callback) {
               var label = labelMatch[1];
               shortLabel += label;
 
-              triples.addTriple(uri, rdfNS + 'type', ontNS + type);
-              triples.addTriple(uri, rdfsNS + 'label', lit(regencyName));
-              triples.addTriple(uri, rdfsNS + 'label', lit(label));
-              triples.addTriple(uri, rdfsNS + 'label', lit(shortLabel));
-              triples.addTriple(uri, rdfsNS + 'label', lit(regencyName) + '@id');
-              triples.addTriple(uri, rdfsNS + 'label', lit(label) + '@id');
-              triples.addTriple(uri, rdfsNS + 'label', lit(shortLabel) + '@id');
-              triples.addTriple(uri, ontNS + 'hasParent', provinceURI);
-              triples.addTriple(uri, ontNS + 'hasGovernmentCode', lit(divisionCode));
+              self.addTriple(uri, RDF_NS + 'type', BM_NS + type);
+              self.addTriple(uri, RDFS_NS + 'label', lit(regencyName));
+              self.addTriple(uri, RDFS_NS + 'label', lit(label));
+              self.addTriple(uri, RDFS_NS + 'label', lit(shortLabel));
+              self.addTriple(uri, RDFS_NS + 'label', lit(regencyName) + '@id');
+              self.addTriple(uri, RDFS_NS + 'label', lit(label) + '@id');
+              self.addTriple(uri, RDFS_NS + 'label', lit(shortLabel) + '@id');
+              self.addTriple(uri, BM_NS + 'hasParent', provinceURI);
+              self.addTriple(uri, BM_NS + 'hasGovernmentCode', lit(divisionCode));
 
               // Add OWL equivalence for URI referring to BPS code
-              triples.addTriple(uri, owlNS + 'sameAs', bpsURI(divisionCode));
-              // triples.addTriple(kodwilNS + divisionCode, owlNS + 'sameAs', uri);
+              self.addTriple(uri, OWL_NS + 'sameAs', bpsURI(divisionCode));
+              // self.addTriple(KODWIL_NS + divisionCode, OWL_NS + 'sameAs', uri);
             }
             else {
               // A kecamatan
@@ -222,22 +227,22 @@ function parsePermendagri(triples, latLongs, callback) {
 
               // Process according to the available district name
               var regencyURI = placeURI(currentProvince, currentRegency);
-              var uri = placeURI(currentProvince, currentRegency, districtName);
+              uri = placeURI(currentProvince, currentRegency, districtName);
 
               // 'Kecamatan' in Papua and Papua Barat is called 'Distrik'
-              var type = /^Papua/.test(currentProvince) ? 'Distrik' : 'Kecamatan';
+              type = /^Papua/.test(currentProvince) ? 'Distrik' : 'Kecamatan';
 
-              triples.addTriple(uri, rdfNS + 'type', ontNS + type);
-              triples.addTriple(uri, rdfsNS + 'label', lit(districtName));
-              triples.addTriple(uri, rdfsNS + 'label', lit(type + ' ' + districtName));
-              triples.addTriple(uri, rdfsNS + 'label', lit(districtName) + '@id');
-              triples.addTriple(uri, rdfsNS + 'label', lit(type + ' ' + districtName) + '@id');
-              triples.addTriple(uri, ontNS + 'hasParent', regencyURI);
-              triples.addTriple(uri, ontNS + 'hasGovernmentCode', lit(divisionCode));
+              self.addTriple(uri, RDF_NS + 'type', BM_NS + type);
+              self.addTriple(uri, RDFS_NS + 'label', lit(districtName));
+              self.addTriple(uri, RDFS_NS + 'label', lit(type + ' ' + districtName));
+              self.addTriple(uri, RDFS_NS + 'label', lit(districtName) + '@id');
+              self.addTriple(uri, RDFS_NS + 'label', lit(type + ' ' + districtName) + '@id');
+              self.addTriple(uri, BM_NS + 'hasParent', regencyURI);
+              self.addTriple(uri, BM_NS + 'hasGovernmentCode', lit(divisionCode));
 
               // Add OWL equivalence for URI referring to BPS code
-              triples.addTriple(uri, owlNS + 'sameAs', bpsURI(divisionCode));
-              // triples.addTriple(kodwilNS + divisionCode, owlNS + 'sameAs', uri);
+              self.addTriple(uri, OWL_NS + 'sameAs', bpsURI(divisionCode));
+              // self.addTriple(KODWIL_NS + divisionCode, OWL_NS + 'sameAs', uri);
 
               var parenthesesMatch = districtName.match(/(.+)\s\((.+)\)/),
                   slashMatch = districtName.match(/(.+)\s?\/\s?(.+)/);
@@ -254,8 +259,8 @@ function parsePermendagri(triples, latLongs, callback) {
 
                 altUri1 = placeURI(currentProvince, currentRegency, alt1);
                 altUri2 = placeURI(currentProvince, currentRegency, alt2);
-                triples.addTriple(altUri1, owlNS + 'sameAs', uri);
-                triples.addTriple(altUri2, owlNS + 'sameAs', uri);
+                self.addTriple(altUri1, OWL_NS + 'sameAs', uri);
+                self.addTriple(altUri2, OWL_NS + 'sameAs', uri);
               }
             }
           }
@@ -263,68 +268,24 @@ function parsePermendagri(triples, latLongs, callback) {
           var bpsCode = divisionCode.replace(/\./g, '');
           var pos = latLongs[bpsCode];
           if (pos) {
-            triples.addTriple(uri, geoNS + 'lat', lit(pos.latitude));
-            triples.addTriple(uri, geoNS + 'long', lit(pos.longitude));
+            self.addTriple(uri, GEO_NS + 'lat', lit(pos.latitude));
+            self.addTriple(uri, GEO_NS + 'long', lit(pos.longitude));
           }
         }
       });
 
-      callback(null, triples);
-    })
-}
+      callback(null, self);
+    });
+};
 
-function parse(triples, callback) {
-  parseBPS(function(latLongs) {
-    parsePermendagri(triples, latLongs, callback);
-  });
-}
+WilayahDriver.prototype.fetch = function() {
+  var self = this;
 
-exports.getTripleStore = function getTripleStore(callback) {
-  var tripleStore = n3.Store(null, prefixes);
-
-  parse(tripleStore, function flushTriples(err, resultingTriples) {
-    if (err) {
-      callback(err);
-    }
-    else {
-      callback(null, resultingTriples);
-    }
-  });
-}
-
-exports.writeTriples = function writeTriples(outputTurtle, callback) {
-  var tripleWriter = n3.Writer(prefixes);
-
-  parse(tripleWriter, function flushTriples(err, resultingTriples) {
-    resultingTriples.end(function(err, result) {
-      if (!err) {
-        fs.writeFile(outputTurtle, result, callback);
-      }
-      else {
-        callback(err);
-      }
+  self.parseBPS(function() {
+    self.parsePermendagri(function() {
+      self.finish();
     });
   });
-}
+};
 
-if (require.main === module) {
-  var logger = require('winston');
-  var minimist = require('minimist');
-
-  var outputTurtle = './instances.ttl';
-  var argv = minimist(process.argv.slice(2));
-  if (argv.o) {
-    outputTurtle = argv.o;
-  }
-
-  logger.info('Turtle output will be written to ' + outputTurtle + '.');
-  logger.info('Loading CSV...');
-  exports.writeTriples(outputTurtle, function(err) {
-    if (err) {
-      logger.error(err);
-    }
-    else {
-      logger.info('Turtle output successfully written to ' + outputTurtle + '.');
-    }
-  })
-}
+BmDriverBase.handleCLI();
