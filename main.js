@@ -30,7 +30,7 @@ var nameReplace = {
   'Kep\\.': 'Kepulauan',
   '^Daista ': 'DI ',
   '^DKI ': 'DKI ',
-  '^Kab\\. ': 'Kabupaten ',
+  '^Kab\\.? ': 'Kabupaten ',
   'Adm\\.': 'Administrasi',
 
   // More specific replacements...
