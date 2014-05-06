@@ -28,10 +28,10 @@ var nameReplace = {
   ' - ': '-',
   '\\s?/\\s?': '/',
   'Kep\\.': 'Kepulauan',
-  '^Daista': 'DI',
-  '^DKI': 'DKI',
-  '^Kab\\.?': 'Kabupaten',
-  'Adm.': 'Administrasi',
+  '^Daista ': 'DI ',
+  '^DKI ': 'DKI ',
+  '^Kab\\. ': 'Kabupaten ',
+  'Adm\\.': 'Administrasi',
 
   // More specific replacements...
   'Siau Tagulandang B$': 'Siau Tagulandang Biaro',
