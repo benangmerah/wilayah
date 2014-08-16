@@ -36,13 +36,15 @@ var nameReplace = {
   // More specific replacements...
   'Siau Tagulandang B$': 'Siau Tagulandang Biaro',
   'Bolaang Mongondow Ut$': 'Bolaang Mongondow Utara',
-  'Bolaang Mongondow Se$': 'Bolaang Mongondow Selatan'
+  'Bolaang Mongondow Se$': 'Bolaang Mongondow Selatan',
+  'Bolaang Mongondow Ti$': 'Bolaang Mongondow Timur'
 };
 
 function sanitizeName(name, titleize) {
   var output = name;
 
   output = output.trim();
+  output = output.replace(/"/g, '');
   output = output.replace(/^[0-9]+/, '');
   output = output.trim();
 
