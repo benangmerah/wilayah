@@ -5,7 +5,12 @@
   "private": true,
   "dependencies": {
     "underscore.string": "~2.3.3",
-    "csv": "~0.3.7",
-    "benangmerah-driver-base": "benangmerah/driver-base"
+    "benangmerah-driver-base": "benangmerah/driver-base",
+    "csv-parser": "^1.4.4",
+    "csvrow": "^0.1.0",
+    "byline": "^4.1.1",
+    "lodash": "^2.4.1",
+    "geolib": "^2.0.14",
+    "async": "^0.9.0"
   }
 }
