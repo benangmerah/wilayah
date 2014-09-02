@@ -409,7 +409,12 @@ WilayahDriver.prototype.parseGeonames = function(callback) {
           return;
         }
 
-        place.equivalentGeonames.push(geonameId);
+        place.equivalentGeonames.push({
+          id: geonameId,
+          name: values[1],
+          latitude: gnPos.latitude,
+          longitude: gnPos.longitude
+        });
 
         analysis.write(geonameId + ' ' + asciiname + ' (' + featureClass + ') ~ ' + place.path + '\n');
         analysis.write('aka: ' + names.join(',') + '\n');
@@ -425,8 +430,10 @@ WilayahDriver.prototype.parseGeonames = function(callback) {
 WilayahDriver.prototype.addTriples = function(callback) {
   var self = this;
 
+  var gnToAdd = {};
+
   _.each(self.orderIndex, function(place) {
-    self.addTriple(place.uri, RDF_NS + 'type', BM_NS + place.type);
+    self.addTriple(place.uri, RDF_NS + 'type', BM_NS + place.type.replace(/ /g, ''));
 
     self.addTriple(place.uri, SKOS_NS + 'preferredLabel', lit(place.fullName));
 
@@ -452,9 +459,26 @@ WilayahDriver.prototype.addTriples = function(callback) {
     _.each(_.uniq(place.twinNames), function(name) {
       self.addTriple(place.uri, OWL_NS + 'sameAs', place.parent.uri + '/' + _s.slugify(name));
     });
-    _.each(place.equivalentGeonames, function(gnId) {
+
+    if (place.type === 'Kecamatan' || place.type === 'Distrik') {
+      self.addTriple(place.uri, OWL_NS + 'sameAs', BPS_NS + place.parent.bpsCode + '/' + _s.slugify(place.nominalName));
+    }
+
+    _.each(place.equivalentGeonames, function(gnObj) {
+      var gnId = gnObj.id;
+      gnToAdd[gnId] = gnObj;
       self.addTriple(place.uri, RDFS_NS + 'seeAlso', GEONAMES_NS + gnId + '/');
     });
+  });
+
+  _.each(gnToAdd, function(gnObj) {
+    var gnId = gnObj.id;
+    var gnUri = GEONAMES_NS + gnId + '/';
+    self.addTriple(gnUri, RDF_NS + 'type', 'http://www.geonames.org/ontology#Feature');
+    self.addTriple(gnUri, 'http://www.geonames.org/ontology#name', lit(gnObj.name));
+    self.addTriple(gnUri, RDFS_NS + 'isDefinedBy', gnUri + 'about.rdf');
+    self.addTriple(gnUri, GEO_NS + 'lat', lit(gnObj.latitude));
+    self.addTriple(gnUri, GEO_NS + 'long', lit(gnObj.longitude));
   });
 
   callback();
